@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- <a class="navbar-brand" href="#">Logo MikasReviews</a> -->
+      <%= link_to "Logo MikasReviews", root_path, class: "navbar-brand" %>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Jogos", jogo_view_path %></li>
+      <li><%= link_to "Noticias", noticias_view_path %></li>
+      <li><%= link_to "Empresas", conta_view_path %></li>
+      <li><%= link_to "Utilizadores", conta_view_path %></li>
+      <li><form><input type="text"><button type="button" class="btn btn-default">Procurar</button></form>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registar-se</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
