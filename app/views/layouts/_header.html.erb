@@ -9,11 +9,19 @@
       <li><%= link_to "Noticias", noticias_view_path %></li>
       <li><%= link_to "Empresas", conta_view_path %></li>
       <li><%= link_to "Utilizadores", conta_view_path %></li>
-      <li><form><input type="text"><button type="button" class="btn btn-default">Procurar</button></form>
+      <li style="margin-top:10px;"><form><input type="text"><button type="button" class="btn btn-default">Procurar</button></form>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registar-se</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li>
+        <%= link_to signup_path do %>
+            <span class="glyphicon glyphicon-user"></span> Registar-se
+        <% end %>
+      </li>
+      <li>
+        <%= link_to 'login_path' do %>
+            <span class="glyphicon glyphicon-log-in"></span> Login
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>
