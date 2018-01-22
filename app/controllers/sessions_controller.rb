@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
     conta = Conta.find_by(email: params[:session][:email].downcase)
     if conta && conta.authenticate(params[:session][:password])
       log_in conta
+      params[:session][:remember_me] == '1' ? remember(conta) : forget(conta)
       redirect_to conta
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = 'Combinação de email/password errada.'
       render 'new'
     end
   end
