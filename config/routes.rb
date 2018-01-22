@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'sessions/new'
+
   get 'review/view'
 
   get 'jogo/view'
@@ -9,6 +11,12 @@ Rails.application.routes.draw do
   get 'conta/view'
   get 'conta/index'
   get 'noticias/view'
+
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
 
   root 'frontoffice#index'
   get  '/signup',  to: 'conta#new'

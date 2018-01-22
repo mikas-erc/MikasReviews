@@ -13,15 +13,24 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
-        <%= link_to signup_path do %>
-            <span class="glyphicon glyphicon-user"></span> Registar-se
-        <% end %>
+        <li>
+          <% if logged_in? %>
+            <li><%= link_to "Profile", current_conta %></li>
+            <li><%= link_to "Settings", '#' %></li>
+          <%= link_to "Log out", logout_path, method: :delete %>
+          <% else %>
+          <%= link_to signup_path do %>
+              <span class="glyphicon glyphicon-user"></span> Registar-se
+          <% end %>
+        </li>
+        <li>
+          <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"></span> Login
+          <% end %>
+        </li>
+        <% end%>
       </li>
-      <li>
-        <%= link_to 'login_path' do %>
-            <span class="glyphicon glyphicon-log-in"></span> Login
-        <% end %>
-      </li>
+
     </ul>
   </div>
 </nav>

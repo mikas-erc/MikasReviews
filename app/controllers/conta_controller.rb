@@ -4,10 +4,6 @@ class ContaController < ApplicationController
     @conta = Conta.find(params[:id])
   end
 
-  def new
-    @contanova = Conta.new
-  end
-
   def index
     @contas = Conta.all
   end
@@ -16,13 +12,21 @@ class ContaController < ApplicationController
   end
 
   def create
-  @conta = Conta.new(params[:conta])    # Not the final implementation!
+  @conta = Conta.new(conta_params)
     if @conta.save
-      # Handle a successful save.
+      log_in @conta
+      flash[:info] = "Por favor verifique o seu email para ativar a sua conta"
+      redirect_to root_url
     else
       render 'new'
     end
   end
+
+  def new
+    @conta= Conta.new
+  end
+
+
 
   def conta_params
   params.require(:conta).permit(:name, :email, :password,
