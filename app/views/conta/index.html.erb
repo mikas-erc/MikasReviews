@@ -1,4 +1,40 @@
-<% @contas.each do |t| %>
-  <%= t.nome %>, <%= t.email %>
-  <br>
-<%end%>
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="col-md-9">
+
+    </div>
+    <div class="col-md-3">
+      <%=button_to 'Inserir', new_contum_path, method: :get, class:"btn btn-success"%>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+         <tr>
+           <th>Nome</th>
+           <th>Email</th>
+           <th>Tipo</th>
+           <th>Ações</th>
+         </tr>
+      </thead>
+      <% @contas.each do |t| %>
+       <tbody>
+         <td> <%= t.nome %> </td>
+         <td> <%= t.email %> </td>
+         <td> <%= t.tipo %> </td>
+         <td>
+           <%=button_to 'Detalhes', t, method: :get, class:"btn btn-default btn-sm"%>
+           <%=button_to 'Editar', edit_contum_path(t), method: :get, class:"btn btn-success btn-sm"%>
+           <%=button_to 'Apagar', t, method: :delete, data: { confirm:'Apagar Conta?'}, class:"btn btn-danger btn-sm"%>
+         </td>
+       </tbody>
+      <%end%>
+     </table>
+  </div>
+
+
+</div>

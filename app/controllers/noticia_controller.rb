@@ -14,7 +14,7 @@ class NoticiaController < ApplicationController
     @noticia = Noticium.new(noticia_params)
       if @noticia.save
         flash[:info] = "Noticia adicionada com sucesso!"
-        redirect_to noticia_index_path
+        redirect_to noticia_path
       else
         render 'new'
       end
@@ -42,7 +42,7 @@ class NoticiaController < ApplicationController
     def destroy
       @noticia = Noticium.find(params[:id]).destroy
       flash[:success] = "A noticia '" + @noticia.nome + "' foi eliminado com sucesso"
-      redirect_to noticia_index_path
+      redirect_to noticia_path
     end
 
     def new
@@ -50,7 +50,7 @@ class NoticiaController < ApplicationController
     end
 
     def noticia_params
-    params.require(:noticia).permit(:nome,:descricao, :texto, :data) #,:foto
+    params.require(:noticium).permit(:nome,:descricao, :texto, :data) #,:foto
 
     end
 

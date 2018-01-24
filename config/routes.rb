@@ -18,16 +18,18 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   get '/jogos', to: 'frontoffice#jogos_index', as: 'fjogos_index'
+  get '/noticias', to: 'frontoffice#noticias_index', as: 'fnoticias_index'
+  get '/contas', to: 'frontoffice#contas_index', as: 'fcontas_index'
+  get '/signup', to: 'frontoffice#new_conta'
+  post '/createaccount', to: 'frontoffice#create_conta'
   root 'frontoffice#index'
   get '/backoffice', to: 'backoffice#index', as: 'backhome'
 
   scope 'backoffice/' do
     resources :jogo
     resources :noticia
+    resources :conta
   end
 
-
-  get  '/signup',  to: 'conta#new'
-  resources :conta
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

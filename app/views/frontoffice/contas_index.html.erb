@@ -2,12 +2,11 @@
   <div class="col-md-12">
     <br>
   </div>
-<% @noticias.each do |j| %>
+<% @contas.each do |j| %>
   <div class="col-md-3">
     Nome:  <%= j.nome %> <br>
-    Descrição:  <%= j.descricao %> <br>
-    Texto:  <%= j.texto %> <br>
-    Data:  <%= j.data %> <br>
+    Email:  <%= j.email %> <br>
+    Tipo:  <%= j.tipo %> <br>
   </div>
 <%end%>
 

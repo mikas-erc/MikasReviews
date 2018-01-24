@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if conta && conta.authenticate(params[:session][:password])
       log_in conta
       params[:session][:remember_me] == '1' ? remember(conta) : forget(conta)
-      redirect_to conta
+      redirect_to conta # alterar mais tarde
     else
       flash.now[:danger] = 'Combinação de email/password errada.'
       render 'new'

@@ -1,4 +1,6 @@
 class ContaController < ApplicationController
+  before_action :conta_admin
+  layout 'backoffice'
 
   def show
     @conta = Conta.find(params[:id])
@@ -13,11 +15,8 @@ class ContaController < ApplicationController
 
   def create
   @conta = Conta.new(conta_params)
-  @conta.tipo = "user"
     if @conta.save
-      log_in @conta
-      flash[:info] = "Por favor verifique o seu email para ativar a sua conta"
-      redirect_to root_url
+      redirect_to conta_path
     else
       render 'new'
     end
@@ -27,6 +26,31 @@ class ContaController < ApplicationController
     @conta= Conta.new
   end
 
+  def destroy
+  @conta = Conta.find(params[:id])
+    if @conta != current_conta
+      @conta.destroy
+      flash[:success] = "A conta '" + @conta.nome + "' foi eliminado com sucesso"
+      redirect_to conta_path
+    else
+      flash[:warning] = "Não pode apagar a própria conta!"
+      redirect_to conta_path
+    end
+  end
+
+  def edit
+    @conta = Conta.find(params[:id])
+  end
+
+  def update
+    @conta = Conta.find(params[:id])
+
+      if @conta.update_attributes(conta_params)
+        redirect_to @conta
+      else
+        render 'edit'
+      end
+  end
 
 
   def conta_params
