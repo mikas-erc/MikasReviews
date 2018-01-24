@@ -19,6 +19,13 @@ Rails.application.routes.draw do
 
 
   root 'frontoffice#index'
+  get '/backoffice', to: 'backoffice#index', as: 'backhome'
+
+  scope 'backoffice/' do
+    resources :jogo
+  end
+
+
   get  '/signup',  to: 'conta#new'
   resources :conta
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

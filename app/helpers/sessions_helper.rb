@@ -26,7 +26,7 @@ end
   end
 
   def logged_in?
-    !@current_conta.nil?
+    !current_conta.nil?
   end
 
   def forget(conta)

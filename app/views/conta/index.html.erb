@@ -1,1 +1,4 @@
-<%= @conta.name %>, <%= @conta.email %>
+<% @contas.each do |t| %>
+  <%= t.name %>, <%= t.email %>
+  <br>
+<%end%>

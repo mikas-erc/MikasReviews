@@ -3,7 +3,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        
+
         <br>
       </div>
       <div class="col-md-8 debug">
@@ -40,15 +40,19 @@
         <br>
       </div>
       <div class="col-md-4">
+        <% if logged_in? %>
         <div class="col-md-12 debug">
+          <div class="col-md-5" style="margin-bottom:15px; margin-top:15px;">
+            <%=image_tag "http://via.placeholder.com/120x120" %>
+          </div>
           <br>
-          Info Conta
-          <br>
-          <br>
-          <br>
+          <div class="col-md-7">
+              <%= current_conta.name %>
+          </div>
           <br>
         </div>
         <br>
+        <% end %>
         <div class="col-md-12 debug">
           <br>
           <%= link_to "Jogos perto de sair", jogo_view_path %>

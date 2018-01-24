@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180122141929) do
+ActiveRecord::Schema.define(version: 20180123192326) do
+
+  create_table "classificacaos", force: :cascade do |t|
+    t.integer "classificacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "conta", force: :cascade do |t|
     t.string "name"
@@ -20,6 +26,33 @@ ActiveRecord::Schema.define(version: 20180122141929) do
     t.string "password_digest"
     t.string "remember_digest"
     t.index ["email"], name: "index_conta_on_email", unique: true
+  end
+
+  create_table "jogos", force: :cascade do |t|
+    t.string "nome"
+    t.decimal "preco", precision: 8, scale: 2
+    t.text "descricao"
+    t.string "developer"
+    t.integer "idsteam"
+    t.date "data_de_lancamento"
+    t.string "foto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "noticia", force: :cascade do |t|
+    t.text "texto"
+    t.text "descricao"
+    t.string "foto"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "texto"
+    t.integer "classificacao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

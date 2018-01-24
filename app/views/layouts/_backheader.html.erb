@@ -2,23 +2,23 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <!-- <a class="navbar-brand" href="#">Logo MikasReviews</a> -->
-      <%= link_to "Logo MikasReviews", root_path, class: "navbar-brand" %>
+      <%= link_to "Logo MikasReviews", backhome_path, class: "navbar-brand" %>
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to "Jogos", jogo_view_path %></li>
+      <li> Backoffice </li>
+      <li><%= link_to "Jogos", jogo_index_path %></li>
       <li><%= link_to "Noticias", noticias_view_path %></li>
-      <li><%= link_to "Empresas", conta_view_path %></li>
-      <li><%= link_to "Utilizadores", conta_view_path %></li>
+      <li><%= link_to "Conta", conta_view_path %></li>
       <li style="margin-top:10px;"><form><input type="text"><button type="button" class="btn btn-default">Procurar</button></form>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
+        <li>
           <% if logged_in? %>
-            <li><%= link_to current_conta.name, current_conta %></li>
-            <li><%= link_to "Settings", '#' %></li>
-            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+          <li><%= link_to current_conta.name, current_conta %></li>
+          <li><%= link_to "Settings", '#' %></li>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
           <% else %>
-          <li>
           <%= link_to signup_path do %>
               <span class="glyphicon glyphicon-user"></span> Registar-se
           <% end %>
