@@ -7,15 +7,15 @@
     <ul class="nav navbar-nav">
       <li> Backoffice </li>
       <li><%= link_to "Jogos", jogo_index_path %></li>
-      <li><%= link_to "Noticias", noticias_view_path %></li>
-      <li><%= link_to "Conta", conta_view_path %></li>
+      <li><%= link_to "Noticias",'#' %></li>
+      <li><%= link_to "Conta", '#' %></li>
       <li style="margin-top:10px;"><form><input type="text"><button type="button" class="btn btn-default">Procurar</button></form>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
         <li>
           <% if logged_in? %>
-          <li><%= link_to current_conta.name, current_conta %></li>
+          <li><%= link_to current_conta.nome, current_conta %></li>
           <li><%= link_to "Settings", '#' %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
           <% else %>

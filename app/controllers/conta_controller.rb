@@ -13,6 +13,7 @@ class ContaController < ApplicationController
 
   def create
   @conta = Conta.new(conta_params)
+  @conta.tipo = "user"
     if @conta.save
       log_in @conta
       flash[:info] = "Por favor verifique o seu email para ativar a sua conta"
@@ -29,7 +30,7 @@ class ContaController < ApplicationController
 
 
   def conta_params
-  params.require(:conta).permit(:name, :email, :password,
-                               :password_confirmation)
+  params.require(:conta).permit(:nome, :email, :password,
+                               :password_confirmation, :tipo)
   end
 end

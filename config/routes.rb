@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-
+  get '/jogos', to: 'frontoffice#jogos_index', as: 'fjogos_index'
   root 'frontoffice#index'
   get '/backoffice', to: 'backoffice#index', as: 'backhome'
 

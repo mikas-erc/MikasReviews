@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-12">
+    <br>
+  </div>
+<% @jogos.each do |j| %>
+  <div class="col-md-3">
+    Nome:  <%= j.nome %> <br>
+    Preço:  <%= j.preco.to_s %>€ <br>
+    Descrição:  <%= j.descricao %> <br>
+    Developer:  <%= j.developer %> <br>
+    ID Steam:  <%= j.idsteam %> <br>
+    Data de Lançamento:  <%= j.data_de_lancamento %> <br>
+  </div>
+<%end%>
+
+    <div class="col-md-12">
+      <br>
+    </div>
+</div>

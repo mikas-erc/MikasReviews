@@ -9,7 +9,15 @@ class ApplicationController < ActionController::Base
   end
 
   def conta_admin
-    redirect_to(root_url) unless conta_atual.try(:admin?)
+
+    if current_conta.nil?
+      redirect_to(root_url)
+  elsif current_conta.tipo != "admin" || "backoffice"
+      redirect_to(root_url)
+    end
+
+
+    # redirect_to(root_url) unless current_conta.tipo== "admin" || "backoffice"
   end
 
 

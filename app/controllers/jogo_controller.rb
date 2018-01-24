@@ -1,5 +1,5 @@
 class JogoController < ApplicationController
-
+ before_action :conta_admin
  layout 'backoffice'
 
   def view

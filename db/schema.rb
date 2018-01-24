@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 20180123192326) do
   end
 
   create_table "conta", force: :cascade do |t|
-    t.string "name"
+    t.string "nome"
     t.string "email"
+    t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.index ["email"], name: "index_conta_on_email", unique: true
+    t.index ["email"], nome: "index_conta_on_email", unique: true
   end
 
   create_table "jogos", force: :cascade do |t|
