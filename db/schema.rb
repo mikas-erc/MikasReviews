@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.index ["email"], nome: "index_conta_on_email", unique: true
+    t.index ["email"], name: "index_conta_on_email", unique: true
   end
 
   create_table "jogos", force: :cascade do |t|
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 20180123192326) do
   end
 
   create_table "noticia", force: :cascade do |t|
+    t.string "nome"
     t.text "texto"
     t.text "descricao"
+    t.date "data"
     t.string "foto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

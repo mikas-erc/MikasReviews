@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   scope 'backoffice/' do
     resources :jogo
+    resources :noticia
   end
 
 

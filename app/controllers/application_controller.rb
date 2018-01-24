@@ -9,10 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
   def conta_admin
-
+  admin = ["admin","backoffice"]
     if current_conta.nil?
       redirect_to(root_url)
-  elsif current_conta.tipo != "admin" || "backoffice"
+  elsif !admin.include?(current_conta.tipo)
       redirect_to(root_url)
     end
 

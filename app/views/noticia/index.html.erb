@@ -1,0 +1,42 @@
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="col-md-9">
+
+    </div>
+    <div class="col-md-3">
+      <%=button_to 'Inserir', new_noticium_path, method: :get, class:"btn btn-success"%>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+         <tr>
+           <th>Nome</th>
+           <th>descricao</th>
+           <th>Texto</th>
+           <th>Data</th>
+           <th>Ações</th>
+         </tr>
+      </thead>
+      <% @noticias.each do |t| %>
+       <tbody>
+         <td> <%= t.nome %> </td>
+         <td> <%= t.descricao %> </td>
+         <td> <%= t.texto %> </td>
+         <td> <%= t.data %>  </td>
+         <td>
+           <%=button_to 'Detalhes', t, method: :get, class:"btn btn-default btn-sm"%>
+           <%=button_to 'Editar', edit_noticium_path(t), method: :get, class:"btn btn-success btn-sm"%>
+           <%=button_to 'Apagar', t, method: :delete, data: { confirm:'Apagar noticia?'}, class:"btn btn-danger btn-sm"%>
+         </td>
+       </tbody>
+      <%end%>
+     </table>
+  </div>
+
+
+</div>

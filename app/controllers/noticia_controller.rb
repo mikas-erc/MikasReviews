@@ -1,4 +1,4 @@
-class NoticiasController < ApplicationController
+class NoticiaController < ApplicationController
   before_action :conta_admin
   layout 'backoffice'
 
@@ -50,7 +50,8 @@ class NoticiasController < ApplicationController
     end
 
     def noticia_params
-    params.require(:noticia).permit(:nome, :texto, :descricao, :data) #,:foto
+    params.require(:noticia).permit(:nome,:descricao, :texto, :data) #,:foto
 
     end
+
 end
