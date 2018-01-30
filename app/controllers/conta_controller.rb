@@ -28,17 +28,21 @@ class ContaController < ApplicationController
 
   def destroy
   @conta = Conta.find(params[:id])
-    if @conta != current_conta
+    if (@conta != current_conta) && (@conta.tipo!=current_conta.tipo) && (@conta.tipo!="backoffice")
       @conta.destroy
       flash[:success] = "A conta '" + @conta.nome + "' foi eliminado com sucesso"
       redirect_to conta_path
     else
-      flash[:warning] = "Não pode apagar a própria conta!"
+      flash[:warning] = "Não tem permissões para apagar esta conta!"
       redirect_to conta_path
     end
   end
 
   def edit
+    @conta = Conta.find(params[:id])
+  end
+
+  def edit_password
     @conta = Conta.find(params[:id])
   end
 

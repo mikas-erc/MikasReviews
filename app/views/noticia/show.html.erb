@@ -6,6 +6,11 @@
     Descrição:  <%= @noticia.descricao %> <br>
     Texto:  <%= @noticia.texto %> <br>
     Data:  <%= @noticia.data %> <br>
+
+    <div class="col-md-6"><%=button_to 'Editar', edit_noticium_path(@noticia), method: :get, class:"btn btn-success btn-sm"%></div>
+    <div class="col-md-6"><%=button_to 'Apagar', @noticia, method: :delete, data: { confirm:'Apagar noticia?'}, class:"btn btn-danger btn-sm"%></div>
+
+
   </div>
 
 

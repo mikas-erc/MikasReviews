@@ -2,11 +2,14 @@
 
 
   <div class="col-md-12">
-    Nome:  <%= @conta.nome %> <br>
+    <h1> <%= @conta.nome %> </h1> <br>
     Email:  <%= @conta.email %> <br>
-    Tipo:  <%= @conta.tipo %> <br>
+    Tipo:  <%= @conta.tipo %> <br><br><br>
+
+
+  <div class="col-md-4"><%=button_to 'Editar', edit_contum_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
+  <div class="col-md-4"><%=button_to 'Editar Password', editcontapassword_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
+  <div class="col-md-4"><%=button_to 'Apagar', @conta, method: :delete, data: { confirm:'Apagar Conta?'}, class:"btn btn-danger btn-sm"%></div>
   </div>
-
-
 
 </div>
