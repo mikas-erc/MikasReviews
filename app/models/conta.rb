@@ -1,6 +1,7 @@
 class Conta < ApplicationRecord
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :ativo_token
   before_save { self.email = email.downcase }
+  before_save :criar_ativo_digest
 
   validates :nome, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -29,6 +30,12 @@ class Conta < ApplicationRecord
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
+
+  def criar_ativo_digest
+    self.ativo_token = Conta.new_token
+    self.ativo_digest = Conta.digest(ativo_token)
+  end
+
 
   def forget
     update_attribute(:remember_digest, nil)

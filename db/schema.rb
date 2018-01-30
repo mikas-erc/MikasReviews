@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20180123192326) do
   create_table "conta", force: :cascade do |t|
     t.string "nome"
     t.string "email"
-    t.string "tipo"
+    t.string "tipo", default: "user"
+    t.boolean "ativo", default: false
+    t.datetime "ativado_em"
+    t.string "ativo_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

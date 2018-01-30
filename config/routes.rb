@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   post '/createaccount', to: 'frontoffice#create_conta'
   root 'frontoffice#index'
   get '/backoffice', to: 'backoffice#index', as: 'backhome'
+  resources :account_activations, only: [:edit]
+
 
   scope 'backoffice/' do
     resources :jogo
