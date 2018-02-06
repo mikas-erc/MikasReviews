@@ -17,8 +17,8 @@ class FrontofficeController < ApplicationController
   def create_conta
   @conta = Conta.new(conta_params)
     if @conta.save
-      log_in @conta
-      flash[:info] = "Por favor verifique o seu email para ativar a sua conta"
+      @conta.mandar_ativacao_email
+      flash[:info] = "Por favor verifique o seu email para ativar a sua conta."
       redirect_to root_url
     else
       render 'new'

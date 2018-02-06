@@ -1,0 +1,7 @@
+<h1>MikasReviews</h1>
+
+<p>Boas <%= @conta.nome %>,</p>
+
+<p>Bem vindo à MikasReviews! Clique no link abaixo para ativar a sua conta:</p>
+
+<%= edit_account_activation_url(@conta.ativo_token, email: @conta.email) %>

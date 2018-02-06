@@ -26,14 +26,24 @@ class Conta < ApplicationRecord
     update_attribute(:remember_digest, Conta.digest(remember_token))
   end
 
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def criar_ativo_digest
     self.ativo_token = Conta.new_token
     self.ativo_digest = Conta.digest(ativo_token)
+  end
+
+  def ativar
+    update_attribute(:ativo,    true)
+    update_attribute(:ativado_em, Time.zone.now)
+  end
+
+  def mandar_ativacao_email
+    ContaMailer.account_activation(self).deliver_now
   end
 
 

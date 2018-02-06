@@ -17,7 +17,7 @@ module SessionsHelper
   @current_conta ||= Conta.find_by(id: conta_id)
 elsif (conta_id = cookies.signed[:conta_id])
   conta = Conta.find_by(id: conta_id)
-  if conta && conta.authenticated?(cookies[:remember_token])
+  if conta && conta.authenticated?(:remember, cookies[:remember_token])
     log_in conta
     @current_conta = conta
   end

@@ -1,0 +1,5 @@
+Boas <%= @conta.nome %>,
+
+Bem vindo à MikasReviews! Clique no link abaixo para ativar a sua conta:
+
+<%= edit_account_activation_url(@conta.ativo_token, email: @conta.email) %>

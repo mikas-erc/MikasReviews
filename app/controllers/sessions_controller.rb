@@ -6,9 +6,16 @@ class SessionsController < ApplicationController
   def create
     conta = Conta.find_by(email: params[:session][:email].downcase)
     if conta && conta.authenticate(params[:session][:password])
-      log_in conta
-      params[:session][:remember_me] == '1' ? remember(conta) : forget(conta)
-      redirect_to conta # alterar mais tarde
+      if conta.ativo?
+        log_in conta
+        params[:session][:remember_me] == '1' ? remember(conta) : forget(conta)
+        redirect_to conta # alterar mais tarde
+      else
+        message  = "Conta não ativada. "
+        message += "Verifique o seu email para o link de ativação."
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       flash.now[:danger] = 'Combinação de email/password errada.'
       render 'new'
