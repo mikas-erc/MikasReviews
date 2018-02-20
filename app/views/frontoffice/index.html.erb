@@ -7,7 +7,17 @@
         <br>
       </div>
       <div class="col-md-8 debug">
-        <center> últimas noticias </center>
+        <center><h1> últimas noticias </h1></center>
+
+        <% @ultimas_noticias.each do |noticia| %>
+        <div class="col-md-12 debug">
+          <%= link_to noticia.nome, "#" %> <% noticia.data %> <br>
+          <%= noticia.foto %> <br>
+          <%= noticia.descricao %> <br>
+
+        </div>
+        <br>
+        <%end%>
         <br>
         <br>
         <br>

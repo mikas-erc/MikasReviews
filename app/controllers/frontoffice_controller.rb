@@ -1,5 +1,6 @@
 class FrontofficeController < ApplicationController
   def index
+    @ultimas_noticias = Noticium.last(3).to_a.reverse
   end
 
   def jogos_index
