@@ -1,6 +1,13 @@
 class FrontofficeController < ApplicationController
+  before_action :conta_logged_in, only: [:edit_conta, :edit_contapw, :update_conta]
+  before_action :conta_correcta, only: [:edit_conta, :edit_contapw, :update_conta]
+
+
   def index
     @ultimas_noticias = Noticium.last(3).to_a.reverse
+  end
+
+  def settings
   end
 
   def jogos_index
@@ -30,11 +37,30 @@ class FrontofficeController < ApplicationController
     @conta= Conta.new
   end
 
+  def edit_conta
+    @conta = Conta.find(params[:id])
+  end
+
+  def update_conta
+    @conta = Conta.find(params[:id])
+
+      if @conta.update_attributes(conta_params)
+        redirect_to @conta
+      else
+        render 'edit_conta'
+      end
+  end
+
 
 
   def conta_params
   params.require(:conta).permit(:nome, :email, :password,
                                :password_confirmation, :tipo)
+  end
+
+  def conta_correcta
+  @conta = Conta.find(params[:id])
+  redirect_to(root_url) unless conta_atual?(@conta)
   end
 
 end

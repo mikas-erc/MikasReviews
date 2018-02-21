@@ -14,19 +14,23 @@ module SessionsHelper
 
   def current_conta
     if (conta_id = session[:conta_id])
-  @current_conta ||= Conta.find_by(id: conta_id)
-elsif (conta_id = cookies.signed[:conta_id])
-  conta = Conta.find_by(id: conta_id)
-  if conta && conta.authenticated?(:remember, cookies[:remember_token])
-    log_in conta
-    @current_conta = conta
-  end
-end
+      @current_conta ||= Conta.find_by(id: conta_id)
+    elsif (conta_id = cookies.signed[:conta_id])
+      conta = Conta.find_by(id: conta_id)
+      if conta && conta.authenticated?(:remember, cookies[:remember_token])
+        log_in conta
+        @current_conta = conta
+      end
+    end
 
   end
 
   def logged_in?
     !current_conta.nil?
+  end
+
+  def conta_atual?(conta)
+    conta == current_conta
   end
 
   def forget(conta)

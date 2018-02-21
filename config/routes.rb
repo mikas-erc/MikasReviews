@@ -21,9 +21,12 @@
   get '/noticias', to: 'frontoffice#noticias_index', as: 'fnoticias_index'
   get '/contas', to: 'frontoffice#contas_index', as: 'fcontas_index'
   get '/signup', to: 'frontoffice#new_conta'
+  get '/editarconta/:id', to: 'frontoffice#edit_conta', as: 'fedit_conta'
+  patch '/update/:id', to: 'frontoffice#update_conta'
   post '/createaccount', to: 'frontoffice#create_conta'
   root 'frontoffice#index'
   get '/backoffice', to: 'backoffice#index', as: 'backhome'
+  get '/settings', to: 'frontoffice#settings', as: 'settings'
   resources :account_activations, only: [:edit]
 
 
