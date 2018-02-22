@@ -3,7 +3,7 @@
     <br>
   </div>
 <% @noticias.each do |j| %>
-  <div class="col-md-3">
+  <div class="col-md-3 debug">
     Nome:  <%= link_to j.nome, view_noticia_path(j) %> <br>
     Descrição:  <%= j.descricao %> <br>
     Texto:  <%= j.texto %> <br>

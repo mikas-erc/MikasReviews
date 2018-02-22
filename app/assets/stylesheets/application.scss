@@ -14,4 +14,14 @@
  *= require_self
  */
  @import "bootstrap-sprockets";
+ @import "bootswatch/lumen/variables";
  @import "bootstrap";
+ @import "bootswatch/lumen/bootswatch";
+
+body {
+  background-color: #3a5fde;
+}
+
+.debug {
+  background-color: #fff;
+}

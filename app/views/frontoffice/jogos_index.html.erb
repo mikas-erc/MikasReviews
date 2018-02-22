@@ -3,8 +3,8 @@
     <br>
   </div>
 <% @jogos.each do |j| %>
-  <div class="col-md-3">
-    Nome:  <%= j.nome %> <br>
+  <div class="col-md-3 debug">
+    Nome:  <%= link_to j.nome, view_jogo_path(j) %> <br>
     Preço:  <%= j.preco.to_s %>€ <br>
     Descrição:  <%= j.descricao %> <br>
     Developer:  <%= j.developer %> <br>

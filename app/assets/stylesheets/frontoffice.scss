@@ -10,6 +10,18 @@
 //     background-color: #f5f5f5;
 // }
 .debug {
-   outline: #000 solid medium;
+   outline-color:#1420a8;
+   outline-width: 3px;
+   outline-style: solid;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top: 10px;
    margin-bottom: 15px;
+   box-shadow: 9px 9px 10px #000b47;
+   padding-bottom: 5px;
+   padding-top: 5px;
+}
+
+body {
+  background-color: blue;
 }
