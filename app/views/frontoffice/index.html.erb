@@ -11,7 +11,7 @@
 
         <% @ultimas_noticias.each do |noticia| %>
         <div class="col-md-12 debug">
-          <%= link_to noticia.nome, "#" %> <% noticia.data %> <br>
+          <%= link_to noticia.nome, view_noticia_path(noticia) %> <% noticia.data %> <br>
           <%= noticia.foto %> <br>
           <%= noticia.descricao %> <br>
 

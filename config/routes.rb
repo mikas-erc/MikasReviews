@@ -17,6 +17,10 @@
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  get '/noticia/:id', to: 'frontoffice#view_noticia', as:  'view_noticia'
+  get '/jogo/:id', to: 'frontoffice#view_jogo', as:  'view_jogo'
+  get '/conta/:id', to: 'frontoffice#view_conta', as: 'view_conta'
+
   get '/jogos', to: 'frontoffice#jogos_index', as: 'fjogos_index'
   get '/noticias', to: 'frontoffice#noticias_index', as: 'fnoticias_index'
   get '/contas', to: 'frontoffice#contas_index', as: 'fcontas_index'

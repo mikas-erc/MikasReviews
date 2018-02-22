@@ -4,7 +4,7 @@
   </div>
 <% @contas.each do |j| %>
   <div class="col-md-3">
-    Nome:  <%= j.nome %> <br>
+    Nome:  <%= link_to j.nome, view_conta_path(j) %> <br>
     Email:  <%= j.email %> <br>
     Tipo:  <%= j.tipo %> <br>
   </div>

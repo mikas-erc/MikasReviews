@@ -10,6 +10,18 @@ class FrontofficeController < ApplicationController
   def settings
   end
 
+  def view_noticia
+    @noticia = Noticium.find(params[:id])
+  end
+
+  def view_jogo
+    @jogo = Jogo.find(params[:id])
+  end
+
+  def view_conta
+    @conta = Conta.find(params[:id])
+  end
+
   def jogos_index
     @jogos = Jogo.all
   end
