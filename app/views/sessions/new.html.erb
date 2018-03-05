@@ -1,7 +1,7 @@
 <h1>Log in</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 main">
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
@@ -10,7 +10,7 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :remember_me, class: "checkbox inline" do %>
+      <%= f.label :remember_me, class: "checkbox inline", style: "margin-left:20px;" do %>
         <%= f.check_box :remember_me %>
         <span>Lembrar-me neste computador</span>
       <% end %>

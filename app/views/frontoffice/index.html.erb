@@ -6,11 +6,11 @@
 
         <br>
       </div>
-      <div class="col-md-8 debug" style="margin-left:0px; margin-right:0px;">
+      <div class="col-md-8 main" style="margin-left:0px; margin-right:0px;">
         <center><h1> últimas noticias </h1></center>
 
         <% @ultimas_noticias.each do |noticia| %>
-        <div class="col-md-12 debug">
+        <div class="col-md-12 hl">
           <%= link_to noticia.nome, view_noticia_path(noticia) %> <% noticia.data %> <br>
           <%= noticia.foto %> <br>
           <%= noticia.descricao %> <br>
@@ -51,7 +51,7 @@
       </div>
       <div class="col-md-4">
         <% if logged_in? %>
-        <div class="col-md-12 debug">
+        <div class="col-md-12 main">
           <div class="col-md-5" style="margin-bottom:15px; margin-top:15px;">
             <%=image_tag "http://via.placeholder.com/120x120" %>
           </div>
@@ -65,7 +65,7 @@
         </div>
         <br>
         <% end %>
-        <div class="col-md-12 debug">
+        <div class="col-md-12 main">
           <br>
           <%= link_to "Jogos perto de sair", jogo_view_path %>
           <br>
@@ -74,7 +74,7 @@
           <br>
         </div>
         <br>
-        <div class="col-md-12 debug">
+        <div class="col-md-12 main">
           <br>
           <%= link_to "Ultimas Reviews", review_view_path %>
           <br>
@@ -83,7 +83,7 @@
           <br>
         </div>
         <br>
-        <div class="col-md-12 debug">
+        <div class="col-md-12 main">
           <br>
           Tendencias
           <br>

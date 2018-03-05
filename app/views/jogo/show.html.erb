@@ -1,7 +1,7 @@
 <div class="row">
 
 
-  <div class="col-md-12">
+  <div class="col-md-12 main">
     Nome:  <%= @jogo.nome %> <br>
     Preço:  <%= @jogo.preco.to_s %>€ <br>
     Descrição:  <%= @jogo.descricao %> <br>
@@ -12,7 +12,7 @@
 
     <div class="col-md-6"><%=button_to 'Editar', edit_jogo_path(@jogo), method: :get, class:"btn btn-success btn-sm"%></div>
     <div class="col-md-6"><%=button_to 'Apagar', @jogo, method: :delete, data: { confirm:'Apagar jogo?'}, class:"btn btn-danger btn-sm"%></div>
-    
+
   </div>
 
 
