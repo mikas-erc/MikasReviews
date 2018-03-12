@@ -31,7 +31,11 @@ class FrontofficeController < ApplicationController
   end
 
   def contas_index
-    @contas = Conta.all
+    @contas = Conta.all.where.not(tipo:"empresa")
+  end
+
+  def empresas_index
+    @contas = Conta.all.where(tipo:"empresa")
   end
 
   def create_conta

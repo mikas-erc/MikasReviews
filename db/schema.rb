@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.boolean "ativo", default: false
     t.datetime "ativado_em"
     t.string "ativo_digest"
+    t.string "foto"
+    t.string "nickname"
+    t.boolean "verificado", default: false
+    t.boolean "newsletter", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
@@ -38,6 +42,7 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.text "descricao"
     t.string "developer"
     t.integer "idsteam"
+    t.boolean "steam"
     t.date "data_de_lancamento"
     t.string "foto"
     t.datetime "created_at", null: false
@@ -49,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.text "texto"
     t.text "descricao"
     t.date "data"
+    t.string "tags"
     t.string "foto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

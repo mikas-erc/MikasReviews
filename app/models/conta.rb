@@ -2,7 +2,8 @@ class Conta < ApplicationRecord
   attr_accessor :remember_token, :ativo_token
   before_save { self.email = email.downcase }
   before_save :criar_ativo_digest
-
+  mount_uploader :foto, AvatarUploader
+  validates :foto, presence:true, allow_blank:false
   validates :nome, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX },uniqueness: { case_sensitive: false }

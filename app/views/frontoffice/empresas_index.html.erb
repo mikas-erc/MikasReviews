@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <br>
+  </div>
+<% @contas.each do |j| %>
+  <div class="col-md-3 main">
+    Nome:  <%= link_to j.nome, view_conta_path(j) %> <br>
+    Email:  <%= j.email %> <br>
+    Foto: <%= image_tag j.foto %> <br>
+    Tipo:  <%= j.tipo %> <br>
+    verificado: <%= j.verificado%><br>
+  </div>
+<%end%>
+
+    <div class="col-md-12">
+      <br>
+    </div>
+</div>

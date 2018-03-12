@@ -6,6 +6,7 @@ class CreateJogos < ActiveRecord::Migration[5.1]
       t.text :descricao
       t.string :developer
       t.integer :idsteam
+      t.boolean :steam
       t.date :data_de_lancamento
       t.string :foto
 

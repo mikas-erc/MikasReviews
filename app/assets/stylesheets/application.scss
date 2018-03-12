@@ -22,6 +22,14 @@ body {
   background-color: #3a5fde;
 }
 
+a:link, a:visited, a:hover, a:active, a:focus {
+   color: inherit;
+ }
+
+footer {
+  text-align: center;
+}
+
 .main {
   background-color: #fff;
 }

@@ -24,6 +24,7 @@
   get '/jogos', to: 'frontoffice#jogos_index', as: 'fjogos_index'
   get '/noticias', to: 'frontoffice#noticias_index', as: 'fnoticias_index'
   get '/contas', to: 'frontoffice#contas_index', as: 'fcontas_index'
+  get '/empresas', to: 'frontoffice#empresas_index', as: 'fempresas_index'
   get '/signup', to: 'frontoffice#new_conta'
   get '/editarconta/:id', to: 'frontoffice#edit_conta', as: 'fedit_conta'
   patch '/update/:id', to: 'frontoffice#update_conta'

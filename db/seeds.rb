@@ -11,12 +11,14 @@ Conta.create!(nome:"teste1",
               password_confirmation:"teste1",
               tipo:"admin",
               ativo:true,
-              ativado_em: Time.zone.now)
+              ativado_em: Time.zone.now,
+              foto: File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
 
-              Conta.create!(nome:"teste2",
-                            email:"teste2@gmail.com",
-                            password:"teste2",
-                            password_confirmation:"teste2",
-                            tipo:"user",
-                            ativo:true,
-                            ativado_em: Time.zone.now)
+Conta.create!(nome:"teste2",
+              email:"teste2@gmail.com",
+              password:"teste2",
+              password_confirmation:"teste2",
+              tipo:"user",
+              ativo:true,
+              ativado_em: Time.zone.now,
+              foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))

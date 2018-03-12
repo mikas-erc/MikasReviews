@@ -3,11 +3,15 @@
     <br>
   </div>
 <% @contas.each do |j| %>
-  <div class="col-md-3 main">
-    Nome:  <%= link_to j.nome, view_conta_path(j) %> <br>
-    Email:  <%= j.email %> <br>
-    Tipo:  <%= j.tipo %> <br>
-  </div>
+  <%= link_to view_conta_path(j) do %>
+    <div class="col-md-3 main">
+      Nome:  <%=j.nome %> <br>
+      Email:  <%= j.email %> <br>
+      Foto: <%= image_tag j.foto %> <br>
+      Tipo:  <%= j.tipo %> <br>
+      verificado: <%= j.verificado%><br>
+    </div>
+  <%end%>
 <%end%>
 
     <div class="col-md-12">

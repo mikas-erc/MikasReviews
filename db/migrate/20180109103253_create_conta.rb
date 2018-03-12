@@ -7,6 +7,11 @@ class CreateConta < ActiveRecord::Migration[5.1]
       t.boolean :ativo, default:false
       t.datetime :ativado_em
       t.string :ativo_digest
+      t.string :foto
+      t.string :nickname
+      t.boolean :verificado, default:false
+      t.boolean :newsletter, default:true
+
 
       t.timestamps
     end

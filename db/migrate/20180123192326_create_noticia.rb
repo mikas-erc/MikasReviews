@@ -5,6 +5,7 @@ class CreateNoticia < ActiveRecord::Migration[5.1]
       t.text :texto
       t.text :descricao
       t.date :data
+      t.string :tags
       t.string :foto
 
       t.timestamps
