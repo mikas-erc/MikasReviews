@@ -45,7 +45,7 @@ class FrontofficeController < ApplicationController
       flash[:info] = "Por favor verifique o seu email para ativar a sua conta."
       redirect_to root_url
     else
-      render 'new'
+      render 'new_conta'
     end
   end
 

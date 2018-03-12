@@ -22,3 +22,13 @@ Conta.create!(nome:"teste2",
               ativo:true,
               ativado_em: Time.zone.now,
               foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+
+Conta.create!(nome:"teste3",
+              email:"teste3@gmail.com",
+              password:"teste3",
+              password_confirmation:"teste3",
+              tipo:"empresa",
+              ativo:true,
+              verificado:true,
+              ativado_em: Time.zone.now,
+              foto: File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))

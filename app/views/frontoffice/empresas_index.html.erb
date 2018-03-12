@@ -3,16 +3,31 @@
     <br>
   </div>
 <% @contas.each do |j| %>
-  <div class="col-md-3 main">
-    Nome:  <%= link_to j.nome, view_conta_path(j) %> <br>
-    Email:  <%= j.email %> <br>
-    Foto: <%= image_tag j.foto %> <br>
-    Tipo:  <%= j.tipo %> <br>
-    verificado: <%= j.verificado%><br>
-  </div>
+  <%= link_to view_conta_path(j) do %>
+    <div class="col-md-3 main">
+      <div class="col-md-5" style="padding-left:0px;">
+        <%= image_tag j.foto %>
+      </div>
+
+     <div class="col-md-7">
+         Nome:  <%= j.nome%>
+         <% if j.verificado? %>
+          <%=image_tag "verificado.png" %>
+         <%end%><br>
+         Email:  <%= j.email %> <br>
+         Tipo:  <%= j.tipo %> <br>
+     </div>
+    </div>
+  <%end%>
 <%end%>
 
     <div class="col-md-12">
       <br>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
