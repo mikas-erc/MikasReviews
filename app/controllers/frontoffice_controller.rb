@@ -31,11 +31,11 @@ class FrontofficeController < ApplicationController
   end
 
   def contas_index
-    @contas = Conta.all.where.not(tipo:"empresa")
+    @contas = Conta.all.where.not(tipo:"empresa").where(ativo:true)
   end
 
   def empresas_index
-    @contas = Conta.all.where(tipo:"empresa")
+    @contas = Conta.all.where(tipo:"empresa").where(ativo:true)
   end
 
   def create_conta

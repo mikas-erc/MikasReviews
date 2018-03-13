@@ -5,17 +5,16 @@
 <% @contas.each do |j| %>
   <%= link_to view_conta_path(j) do %>
   <div class="col-md-3 main">
-    <div class="col-md-5" style="padding-left:0px;">
+    <div class="col-md-5" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
       <%= image_tag j.foto %>
     </div>
 
-   <div class="col-md-7">
-       Nome:  <%= j.nome%>
+   <div class="col-md-7" style="margin-top:45px">
+       <span style="font-size:20px;"><%=j.nickname%></span>
        <% if j.verificado? %>
-        <%=image_tag "verificado.png" %>
+        <%=image_tag "verificado.png", style:"margin-bottom:15px;"  %>
        <%end%><br>
-       Email:  <%= j.email %> <br>
-       Tipo:  <%= j.tipo %> <br>
+       <span class="text-info"><%=j.tipo%></span>
    </div>
   </div>
   <%end%>

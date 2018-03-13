@@ -1,19 +1,27 @@
 <div class="row">
 
 
-  <div class="col-md-12 main">
-    <h1> <%=@conta.nickname %> / <%= @conta.nome %> </h1> <br>
-    <div class="col-md-6">
+  <div class="col-md-offset-3 col-md-6 main">
+    <div style="text-align:center; margin-bottom:15px;">
+      <span style="font-size:35px"><%= @conta.nickname %></span>
+      <% if @conta.verificado? %><%=image_tag "verificado.png", style:"margin-bottom:15px"%><%end%>
+      <span class="text-muted"> <%= @conta.nome%> </span><br>
+    </div>
+    <div class="col-md-4">
       <%= image_tag @conta.foto %>
     </div>
+    Nickname: <%= @conta.nickname %> <br>
     Email:  <%= @conta.email %> <br>
     Tipo:  <%= @conta.tipo %> <br>
     Ativo: <%= @conta.ativo %> <br>
+    Verificado <%=@conta.verificado %> <br>
+    Newsletter: <%=@conta.newsletter %> <br>
 
-
-  <div class="col-md-12"><%=button_to 'Editar', edit_contum_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
-  <div class="col-md-4"><%=button_to 'Editar Password', editcontapassword_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
-  <div class="col-md-4"><%=button_to 'Apagar', @conta, method: :delete, data: { confirm:'Apagar Conta?'}, class:"btn btn-danger btn-sm"%></div>
+    <div style="margin-top:20px;">
+      <div class="col-md-4"><%=button_to 'Editar', edit_contum_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
+      <div class="col-md-4"><%=button_to 'Editar Password', editcontapassword_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
+      <div class="col-md-4"><%=button_to 'Apagar', @conta, method: :delete, data: { confirm:'Apagar Conta?'}, class:"btn btn-danger btn-sm"%></div>
+    </div>
   </div>
 
 </div>

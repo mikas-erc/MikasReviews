@@ -10,6 +10,7 @@
       <thead>
          <tr>
            <th>ID</th>
+           <th>Nickname</th>
            <th>Nome</th>
            <th>Email</th>
            <th>Tipo</th>
@@ -19,6 +20,7 @@
       <% @contas.each do |t| %>
        <tbody>
          <td> <%= t.id%> </td>
+         <td> <%= t.nickname%> </td>
          <td> <%= t.nome %> </td>
          <td> <%= t.email %> </td>
          <td> <%= t.tipo %> </td>

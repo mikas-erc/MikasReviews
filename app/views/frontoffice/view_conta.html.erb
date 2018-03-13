@@ -1,42 +1,21 @@
 <div class="row">
-  <div class="col-md-12">
-    <br>
-  </div>
-  <div class="col-md-8 main">
-   <%= @conta.nome %>
-   <%= @conta.tipo %>
-   <%#= @conta.foto %>
-    <br>
-    <br>
-reviews favoritas + analisadores favoritos ou jogos publicados
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  <div class="col-md-12">
-    <br>
-    <br>
-   comentarios
-   <br>
-   <br>
- </div>
-   </div>
-  <div class="col-md-4">
-<% if @conta.tipo == "empresa" %>
-    <div class="col-md-12 main">
-      <br>
-Amigos (caso não seja empresa)
-      <br>
-      <br>
-      <br>
-      <br>
+  <div class="col-md-offset-3 col-md-6 main">
+    <div class="col-md-3" style="margin-top:10px">
+      <%= image_tag @conta.foto %>
     </div>
-    <br>
-<%end%>
-
-</div>
+    <div class="class-md-9">
+       <span style="font-size:35px"><%= @conta.nickname %></span>
+       <% if @conta.verificado? %><%=image_tag "verificado.png", style:"margin-bottom:15px"%><%end%>
+       <span class="text-muted"> <%= @conta.nome%> </span><br>
+       <span class="text-info"><%= @conta.tipo %></span><br>
+    </div>
+    <div class="col-md-12" style="margin-bottom:250px">
+      reviews favoritas + analisadores favoritos ou jogos publicados
+    </div>
+    <div class="col-md-12" style="margin-bottom:50px">
+     comentarios
+   </div>
+ </div>
 </div>
 <br>
 <br>

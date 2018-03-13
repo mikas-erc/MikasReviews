@@ -14,19 +14,25 @@
       <%= f.text_field :nome, class: 'form-control' %>
 
       <%= f.label :tipo %>
-      <%= f.text_field :tipo, class: 'form-control' %>
-
-      <%= f.label :foto %>
-      <%= f.file_field :foto %><br>
+      <%= f.text_field :tipo, class: 'form-control' %><br>
 
       <div class="col-md-6">
+        <%= f.label :foto %>
+        <%= f.file_field :foto %>
+      </div>
+      <div class="class-md-6">
+        <%= image_tag @conta.foto %>
+      </div><br>
+
+
         <%= f.label :newsletter %>
-        <%= f.check_box :newsletter %>
-      </div>
-      <div class="col-md-6">
+        <%= f.check_box :newsletter %><br>
+
         <%= f.label :verificado %>
-        <%= f.check_box :verificado %>
-      </div>
+        <%= f.check_box :verificado %><br>
+
+      <%= f.label :ativo %>
+      <%= f.check_box :ativo %><br>
 
 
 

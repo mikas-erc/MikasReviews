@@ -68,6 +68,6 @@ class ContaController < ApplicationController
 
   def conta_params
   params.require(:conta).permit(:nome, :email, :password,
-                               :password_confirmation, :tipo, :nickname, :foto, :verificado, :newsletter)
+                               :password_confirmation, :tipo, :nickname, :foto, :verificado, :newsletter, :ativo)
   end
 end

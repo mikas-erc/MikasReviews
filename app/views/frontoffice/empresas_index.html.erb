@@ -4,20 +4,19 @@
   </div>
 <% @contas.each do |j| %>
   <%= link_to view_conta_path(j) do %>
-    <div class="col-md-3 main">
-      <div class="col-md-5" style="padding-left:0px;">
-        <%= image_tag j.foto %>
-      </div>
-
-     <div class="col-md-7">
-         Nome:  <%= j.nome%>
-         <% if j.verificado? %>
-          <%=image_tag "verificado.png" %>
-         <%end%><br>
-         Email:  <%= j.email %> <br>
-         Tipo:  <%= j.tipo %> <br>
-     </div>
+  <div class="col-md-3 main">
+    <div class="col-md-5" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
+      <%= image_tag j.foto %>
     </div>
+
+   <div class="col-md-7" style="margin-top:35px;">
+       <span style="font-size:35px;"><%=j.nome%></span>
+       <% if j.verificado? %>
+        <%=image_tag "verificado.png", style:"margin-bottom:15px;" %>
+       <%end%><br>
+       <span class="text-info"><%=j.tipo%></span>
+   </div>
+  </div>
   <%end%>
 <%end%>
 

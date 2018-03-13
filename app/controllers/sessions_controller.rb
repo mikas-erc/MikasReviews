@@ -4,7 +4,9 @@ class SessionsController < ApplicationController
 
 
   def create
+    
     conta = Conta.find_by(email: params[:session][:email].downcase)
+
     if conta && conta.authenticate(params[:session][:password])
       if conta.ativo?
         log_in conta
