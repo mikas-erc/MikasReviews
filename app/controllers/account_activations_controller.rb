@@ -2,7 +2,7 @@ class AccountActivationsController < ApplicationController
 
   def edit
     conta = Conta.find_by(email: params[:email])
-    if conta && !conta.activated? && conta.authenticated?(:activation, params[:id])
+    if conta && !conta.ativo? && conta.authenticated?(:ativo, params[:id])
       conta.ativar
       log_in conta
       flash[:success] = "Conta ativada!"

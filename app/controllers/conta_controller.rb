@@ -46,6 +46,15 @@ class ContaController < ApplicationController
     @conta = Conta.find(params[:id])
   end
 
+  def update_password
+    @conta = Conta.find(params[:id])
+      if @conta.update_attributes(conta_params)
+        redirect_to @conta
+      else
+        render 'edit_password'
+      end
+  end
+
   def update
     @conta = Conta.find(params[:id])
 
@@ -59,6 +68,6 @@ class ContaController < ApplicationController
 
   def conta_params
   params.require(:conta).permit(:nome, :email, :password,
-                               :password_confirmation, :tipo)
+                               :password_confirmation, :tipo, :nickname, :foto, :verificado, :newsletter)
   end
 end

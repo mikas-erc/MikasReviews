@@ -2,9 +2,13 @@
 
 
   <div class="col-md-12 main">
-    <h1> <%= @conta.nome %> </h1> <br>
+    <h1> <%=@conta.nickname %> / <%= @conta.nome %> </h1> <br>
+    <div class="col-md-6">
+      <%= image_tag @conta.foto %>
+    </div>
     Email:  <%= @conta.email %> <br>
-    Tipo:  <%= @conta.tipo %> <br><br><br>
+    Tipo:  <%= @conta.tipo %> <br>
+    Ativo: <%= @conta.ativo %> <br>
 
 
   <div class="col-md-12"><%=button_to 'Editar', edit_contum_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>

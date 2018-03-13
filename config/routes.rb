@@ -26,6 +26,7 @@
   get '/contas', to: 'frontoffice#contas_index', as: 'fcontas_index'
   get '/empresas', to: 'frontoffice#empresas_index', as: 'fempresas_index'
   get '/signup', to: 'frontoffice#new_conta'
+  get '/createaccount', to: 'frontoffice#new_conta'
   get '/editarconta/:id', to: 'frontoffice#edit_conta', as: 'fedit_conta'
   patch '/update/:id', to: 'frontoffice#update_conta'
   post '/createaccount', to: 'frontoffice#create_conta'

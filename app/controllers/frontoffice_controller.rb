@@ -4,7 +4,7 @@ class FrontofficeController < ApplicationController
 
 
   def index
-    @ultimas_noticias = Noticium.last(3).to_a.reverse
+    @ultimas_noticias = Noticium.last(10).to_a.reverse
   end
 
   def settings
@@ -71,7 +71,7 @@ class FrontofficeController < ApplicationController
 
   def conta_params
   params.require(:conta).permit(:nome, :email, :password,
-                               :password_confirmation, :tipo)
+                               :password_confirmation, :tipo, :nickname, :foto, :newsletter, :verificado)
   end
 
   def conta_correcta

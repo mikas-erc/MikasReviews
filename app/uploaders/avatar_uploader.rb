@@ -5,6 +5,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  process resize_to_limit: [120, 120]
+  process resize_to_fill: [120, 120, gravity = 'Center']
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
