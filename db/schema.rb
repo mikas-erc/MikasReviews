@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.integer "classificacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index [nil, "created_at"], name: "index_classificacaos_on_conta_id_and_created_at"
   end
 
   create_table "conta", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.string "password_digest"
     t.string "remember_digest"
     t.index ["email"], name: "index_conta_on_email", unique: true
+    t.index ["nickname"], name: "index_conta_on_nickname", unique: true
   end
 
   create_table "jogos", force: :cascade do |t|
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.integer "classificacao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index [nil, "created_at"], name: "index_reviews_on_conta_id_and_created_at"
   end
 
 end

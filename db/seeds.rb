@@ -36,3 +36,15 @@ Conta.create!(nome:"teste3",
               verificado:true,
               ativado_em: Time.zone.now,
               foto: File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+
+50.times do |n|
+  Conta.create!(nome:Faker::RickAndMorty.character,
+                nickname:"Teste-Seed-#{n+1}" ,
+                email:"exemplo-conta-#{n+1}@seed.org",
+                password:"teste1",
+                password_confirmation:"teste1",
+                tipo:"user",
+                ativo:true,
+                ativado_em: Time.zone.now,
+                foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+end
