@@ -39,12 +39,44 @@ Conta.create!(nome:"teste3",
 
 50.times do |n|
   Conta.create!(nome:Faker::RickAndMorty.character,
-                nickname:"Teste-Seed-#{n+1}" ,
+                nickname:"TesteSeed#{n+1}" ,
                 email:"exemplo-conta-#{n+1}@seed.org",
                 password:"teste1",
                 password_confirmation:"teste1",
                 tipo:"user",
                 ativo:true,
                 ativado_em: Time.zone.now,
+                foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+end
+
+50.times do |n|
+  Conta.create!(nome:Faker::RickAndMorty.character,
+                nickname:"TesteSeedE#{n+1}" ,
+                email:"exemplo-empresa-#{n+1}@seed.org",
+                password:"teste1",
+                password_confirmation:"teste1",
+                tipo:"empresa",
+                ativo:true,
+                ativado_em: Time.zone.now,
+                verificado:true,
+                foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+end
+10.times do |n|
+  Jogo.create!(nome:Faker::Fallout.character + "#{n+1}",
+                preco: n+1.99,
+                descricao:Faker::Lorem.sentence,
+                developer:"Teste-SeedE-#{n+1}",
+                idsteam: n+1,
+                steam:true,
+                data_de_lancamento:Time.zone.tomorrow,
+                foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+end
+
+10.times do |n|
+  Noticium.create!(nome:Faker::ProgrammingLanguage.name + "#{n+1}",
+                texto:Faker::Lorem.sentence(50),
+                descricao:Faker::Lorem.sentence,
+                tags:"teste1,teste2,teste3",
+                data:Time.zone.now,
                 foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
 end

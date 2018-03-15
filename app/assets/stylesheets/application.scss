@@ -37,3 +37,16 @@ footer {
 label {
   color: dodgerblue;
 }
+
+ul.pagination {
+    width: 100%;
+    margin: auto;
+  a {
+    font-size: 20px;
+  }
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}

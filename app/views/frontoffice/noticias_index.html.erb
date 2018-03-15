@@ -2,14 +2,9 @@
   <div class="col-md-12">
     <br>
   </div>
-<% @noticias.each do |j| %>
-  <div class="col-md-3 main">
-    Nome:  <%= link_to j.nome, view_noticia_path(j) %> <br>
-    Descrição:  <%= j.descricao %> <br>
-    Texto:  <%= j.texto %> <br>
-    Data:  <%= j.data %> <br>
-  </div>
-<%end%>
+
+  <div class = "sort_paginate_ajax"><%= render 'noticias_index' %></div>
+
 
     <div class="col-md-12">
       <br>

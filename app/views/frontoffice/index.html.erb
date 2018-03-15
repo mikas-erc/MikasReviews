@@ -11,7 +11,7 @@
         <% @ultimas_noticias.each do |noticia| %>
         <div class="col-md-12 hl">
           <%= link_to noticia.nome, view_noticia_path(noticia) %> <% noticia.data %> <br>
-          <%= noticia.foto %> <br>
+          <%= image_tag noticia.foto %> <br>
           <%= noticia.descricao %> <br>
 
         </div>
@@ -24,7 +24,7 @@
         <% if logged_in? %>
         <div class="col-md-12 main">
           <div class="col-md-5" style="margin-bottom:15px; margin-top:15px;">
-            <%=image_tag current_conta.foto %>
+            <%=image_tag current_conta.foto, height:120, width:120 %>
           </div>
           <br>
           <div class="col-md-7">

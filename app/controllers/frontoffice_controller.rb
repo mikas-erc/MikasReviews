@@ -23,19 +23,19 @@ class FrontofficeController < ApplicationController
   end
 
   def jogos_index
-    @jogos = Jogo.all
+    @jogos = Jogo.all.paginate(page: params[:page], per_page: 10)
   end
 
   def noticias_index
-    @noticias = Noticium.all
+    @noticias = Noticium.all.paginate(page: params[:page], per_page: 10)
   end
 
   def contas_index
-    @contas = Conta.all.where.not(tipo:"empresa").where(ativo:true)
+    @contas = Conta.all.where.not(tipo:"empresa").where(ativo:true).paginate(page: params[:page], per_page: 33)
   end
 
   def empresas_index
-    @contas = Conta.all.where(tipo:"empresa").where(ativo:true)
+    @contas = Conta.all.where(tipo:"empresa").where(ativo:true).paginate(page: params[:page], per_page: 33)
   end
 
   def create_conta
