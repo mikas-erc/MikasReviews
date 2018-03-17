@@ -15,11 +15,20 @@
       <%= f.label :developer %>
       <%= f.text_field :developer, class: 'form-control' %>
 
-      <%= f.label :idsteam %>
+      <%= f.label :steam, style:"margin-top:20px"%>
+      <%= f.check_box :steam%><br>
+
+      <%= f.label :idsteam, style:"margin-top:10px" %>
       <%= f.number_field :idsteam, class: 'form-control' %>
 
       <%= f.label :data_de_lancamento %>
-      <%= f.date_field :data_de_lancamento, class: 'form-control' %>
+      <%= f.date_field :data_de_lancamento, class: 'form-control',style:"margin-bottom:20px;" %>
+
+      <div class="col-md-6">
+        <%= f.label :foto %>
+        <%= f.file_field :foto %>
+      </div>
+
 
       <br><%= f.submit "Adicionar jogo", class: "btn btn-primary" %>
     <% end %>

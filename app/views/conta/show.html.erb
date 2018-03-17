@@ -19,7 +19,6 @@
 
     <div style="margin-top:20px;">
       <div class="col-md-4"><%=button_to 'Editar', edit_contum_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
-      <div class="col-md-4"><%=button_to 'Editar Password', editcontapassword_path(@conta), method: :get, class:"btn btn-success btn-sm"%></div>
       <div class="col-md-4"><%=button_to 'Apagar', @conta, method: :delete, data: { confirm:'Apagar Conta?'}, class:"btn btn-danger btn-sm"%></div>
     </div>
   </div>

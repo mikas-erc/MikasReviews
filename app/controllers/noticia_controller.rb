@@ -7,7 +7,7 @@ class NoticiaController < ApplicationController
 
 
     def index
-      @noticias = Noticium.all
+      @noticias = Noticium.all.paginate(page: params[:page], per_page: 30)
     end
 
     def create
@@ -50,7 +50,7 @@ class NoticiaController < ApplicationController
     end
 
     def noticia_params
-    params.require(:noticium).permit(:nome,:descricao, :texto, :data, :foto, :tags) 
+    params.require(:noticium).permit(:nome,:descricao, :texto, :data, :foto, :tags)
 
     end
 

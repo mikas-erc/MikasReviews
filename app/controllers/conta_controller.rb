@@ -15,9 +15,21 @@ class ContaController < ApplicationController
 
   def create
   @conta = Conta.new(conta_params)
-    if @conta.save
-      redirect_to conta_path
+    if @conta.tipo != "backoffice"
+      if @conta.tipo == "admin" && current_conta.tipo == "backoffice"
+        if @conta.save
+          redirect_to conta_path
+        else
+          render 'new'
+        end
+      else
+        message = "Você não tem permissão para adicionar administradores."
+        flash.now[:warning] = message
+        render 'new'
+      end
     else
+      message = "Você não tem permissão para adicionar backoffice."
+      flash.now[:warning] = message
       render 'new'
     end
   end
@@ -58,10 +70,22 @@ class ContaController < ApplicationController
   def update
     @conta = Conta.find(params[:id])
 
-      if @conta.update_attributes(conta_params)
-        redirect_to @conta
+      if conta_params[:tipo] != "backoffice"
+        if conta_params[:tipo] == "admin" && current_conta.tipo == "backoffice"
+          if @conta.update_attributes(conta_params)
+            redirect_to conta_path
+          else
+            render 'edit'
+          end
+        else
+          message = "Você não tem permissão para editar administradores."
+          flash.now[:warning] = message
+          render 'new'
+        end
       else
-        render 'edit'
+        message = "Você não tem permissão para editar backoffice."
+        flash.now[:warning] = message
+        render 'new'
       end
   end
 

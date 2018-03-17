@@ -1,12 +1,20 @@
 <div class="row">
-<% @dev = Conta.find_by(nickname:@jogo.developer) %>
+<% if (@dev = Conta.find_by(nickname:@jogo.developer)).nil? %>
+  <% @dev=0 %>
+<%end%>
   <div class="col-md-12">
     <br>
   </div>
   <div class=" col-md-7 main">
     <div class="col-md-6" style="margin:0px; padding:0px;">
       <span style="font-size:30px;"><%= @jogo.nome %></span><br>
-      <span class="text-muted"><%=link_to @dev.nome, view_conta_path(@dev) %> - <%= @jogo.data_de_lancamento %></span>
+      <span class="text-muted">
+      <%if @dev!=0 %>
+        <%=link_to @dev.nome, view_conta_path(@dev) %>
+      <%else%>
+        <%= @jogo.developer %>
+      <%end%>
+         - <%= @jogo.data_de_lancamento %></span>
     </div>
     <div class="col-md-6" style="margin:0px;">
       <span style="font-size:20px; color:green; margin-left:90%"><%=@jogo.preco%>€</span>

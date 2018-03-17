@@ -5,6 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Conta.create!(nome:"MikasReviews",
+              nickname:"mikasreviews",
+              email:"mikasreviews@gmail.com",
+              password:"teste1",
+              password_confirmation:"teste1",
+              tipo:"backoffice",
+              ativo:true,
+              verificado:true,
+              ativado_em: Time.zone.now,
+              foto: File.open(File.join(Rails.root, "/app/assets/images/logo.png")))
+
 Conta.create!(nome:"teste1",
               nickname:"teste1",
               email:"teste1@gmail.com",

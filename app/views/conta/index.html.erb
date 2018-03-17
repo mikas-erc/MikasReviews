@@ -27,7 +27,6 @@
          <td>
            <%=button_to 'Detalhes', t, method: :get, class:"btn btn-default btn-sm"%>
            <%=button_to 'Editar', edit_contum_path(t), method: :get, class:"btn btn-success btn-sm"%>
-           <%=button_to 'Editar Password', editcontapassword_path(t), method: :get, class:"btn btn-success btn-sm"%>
            <%=button_to 'Apagar', t, method: :delete, data: { confirm:'Apagar Conta?'}, class:"btn btn-danger btn-sm"%>
          </td>
        </tbody>

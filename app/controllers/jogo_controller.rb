@@ -50,7 +50,7 @@ class JogoController < ApplicationController
   end
 
   def jogo_params
-  params.require(:jogo).permit(:nome, :preco, :descricao, :developer, :idsteam, :data_de_lancamento)
+  params.require(:jogo).permit(:nome, :preco, :descricao, :developer, :idsteam, :steam, :data_de_lancamento)
 
   end
 

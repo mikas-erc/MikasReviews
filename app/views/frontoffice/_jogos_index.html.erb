@@ -5,11 +5,17 @@
   <%= link_to view_jogo_path(j) do %>
   <div class="col-md-10 main">
      <div class="col-md-4" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
-       <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %>
+      <center> <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %> </center>
      </div>
      <div class="col-md-8" style="padding:0px;">
          <div class="titulo" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
-         <span class="text-muted"><%= link_to @dev.nome, view_conta_path(@dev) %> - <%=j.data_de_lancamento%></span></div>
+         <span class="text-muted">
+            <%if !@dev.nil? %>
+               <%=link_to @dev.nome, view_conta_path(@dev) %>
+             <%else%>
+               <%= j.developer %>
+              <%end%>
+               - <%=j.data_de_lancamento%></span></div>
          <div class="descricao" style="margin-top:20px;"><span> <%=j.descricao%> </span></div><br>
          <div class="preco" style="color:green; font-size:20px;"><span> <%=j.preco%>€ </span></div>
      </div>
