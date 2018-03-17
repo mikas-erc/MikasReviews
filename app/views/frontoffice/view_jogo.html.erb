@@ -1,41 +1,43 @@
 <div class="row">
+<% @dev = Conta.find_by(nickname:@jogo.developer) %>
   <div class="col-md-12">
     <br>
   </div>
-  <div class="col-md-8 main">
-    <%= @jogo.nome %><br>
-    <%= @jogo.preco.to_s %>€<br>
-    <%= @jogo.developer %><br>
-    <%= @jogo.data_de_lancamento %><br>
-    <br>
-    <br>
-  <div class="col-md-12">
-    <br>
-    <br>
-    Reviews do videojogo
-    <br>
-    <br>
-  </div>
-  <div class="col-md-12">
-    <br>
-    <br>
-   comentarios
-   <br>
-   <br>
- </div>
+  <div class=" col-md-7 main">
+    <div class="col-md-6" style="margin:0px; padding:0px;">
+      <span style="font-size:30px;"><%= @jogo.nome %></span><br>
+      <span class="text-muted"><%=link_to @dev.nome, view_conta_path(@dev) %> - <%= @jogo.data_de_lancamento %></span>
+    </div>
+    <div class="col-md-6" style="margin:0px;">
+      <span style="font-size:20px; color:green; margin-left:90%"><%=@jogo.preco%>€</span>
+    </div>
+    <center><div class="col-md-12">
+      <%= image_tag @jogo.foto %><br>
+    </div></center>
+    <div class="col-md-12" style="margin-top:20px;">
+      <%= @jogo.descricao %><br>
+    </div>
+
+    <div class="col-md-12" style="margin-top:30px;">
+      <span style="font-size:20px;">
+        Reviews do jogo "<%=@jogo.nome%>"
+      </span>
+
+      <div style="margin-top:20px;"><span>Review escolhida pela MikasReviews:</span></div>
+    </div>
+    <div class="col-md-12" style="margin-top:30px; width:100%;">
+      <span class="text-muted"><%= @jogo.preco %></span>
+    </div>
    </div>
-  <div class="col-md-4">
-    <div class="col-md-12 main">
-      <br>
-Jogos do mesmo "tipo"
-      <br>
-      <br>
-      <br>
-      <br>
+  <div class="col-md-4 main" style="margin-bottom:250px;">
+    <div class="col-md-12">
+
+     Jogos do mesmo genero
     </div>
     <br>
 
 </div>
+
 </div>
 <br>
 <br>

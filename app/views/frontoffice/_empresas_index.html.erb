@@ -5,12 +5,23 @@
       <div class="col-md-6" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
         <%= image_tag j.foto, height:120, width:120 %>
       </div>
-      <div class="col-md-6" style="margin-top:45px;">
-           <span style="font-size:15px;"><%=j.nome%></span>
-           <% if j.verificado? %>
-            <%=image_tag "verificado.png", style:"margin-bottom:6px;" %>
-           <%end%><br>
+      <div class="col-md-6" >
+        <div style="margin-left:110%;">
+          <% if j.verificado? %>
+           <%=image_tag "verificado.png" %>
+          <%end%>
+        </div>
+        <div style="margin-top:30px;">
+           <span style="font-size:15px;">
+             <%if j.nome.length>=20%>
+                <%=j.nickname %>
+             <%else%>
+                <%=j.nome%>
+             <%end%>
+           </span>
+          <br>
            <span class="text-info"><%=j.tipo%></span>
+        </div>
      </div>
     </div>
     <%end%>

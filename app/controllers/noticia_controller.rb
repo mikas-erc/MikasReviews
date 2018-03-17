@@ -50,7 +50,7 @@ class NoticiaController < ApplicationController
     end
 
     def noticia_params
-    params.require(:noticium).permit(:nome,:descricao, :texto, :data) #,:foto
+    params.require(:noticium).permit(:nome,:descricao, :texto, :data, :foto, :tags) 
 
     end
 

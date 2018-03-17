@@ -3,11 +3,17 @@
     <br>
   </div>
   <div class=" col-md-7 main">
-    <%= @noticia.nome %><br>
-
-    <%= @noticia.foto %><br>
-
-    <%= @noticia.texto %><br>
+    <span style="font-size:30px;"><%= @noticia.nome %></span><br>
+    <span class="text-muted"> <%= @noticia.data %></span>
+    <center><div class="col-md-12">
+      <%= image_tag @noticia.foto %><br>
+    </div></center>
+    <div class="col-md-12" style="margin-top:20px;">
+      <%= @noticia.texto %><br>
+    </div>
+    <div class="col-md-12" style="margin-top:30px; width:100%;">
+      <span class="text-muted"><%= @noticia.tags %></span>
+    </div>
    </div>
   <div class="col-md-4" style="margin-bottom:250px;">
     <div class="col-md-12 main">

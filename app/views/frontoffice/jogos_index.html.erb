@@ -2,16 +2,9 @@
   <div class="col-md-12">
     <br>
   </div>
-<% @jogos.each do |j| %>
-  <div class="col-md-3 main">
-    Nome:  <%= link_to j.nome, view_jogo_path(j) %> <br>
-    Preço:  <%= j.preco.to_s %>€ <br>
-    Descrição:  <%= j.descricao %> <br>
-    Developer:  <%= j.developer %> <br>
-    ID Steam:  <%= j.idsteam %> <br>
-    Data de Lançamento:  <%= j.data_de_lancamento %> <br>
-  </div>
-<%end%>
+
+  <div class = "sort_paginate_ajax"><%= render 'jogos_index' %></div>
+
 
     <div class="col-md-12">
       <br>

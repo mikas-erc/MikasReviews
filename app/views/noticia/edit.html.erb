@@ -1,4 +1,4 @@
-<h1>Adicionar Noticias</h1>
+<h1>Editar Noticia</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 main">
@@ -10,10 +10,22 @@
       <%= f.text_field :descricao, class: 'form-control' %>
 
       <%= f.label :texto %>
-      <%= f.text_area :texto, class: 'form-control' %>
+      <%= f.text_area :texto, class: 'form-control', style: "height:200px" %>
 
       <%= f.label :data %>
       <%= f.date_field :data, class: 'form-control' %>
+
+      <%= f.label :tags %>
+      <%= f.text_field :tags, class: 'form-control' , style:"margin-bottom:30px;"%>
+
+      <div class="col-md-6">
+        <%= f.label :foto %>
+        <%= f.file_field :foto %>
+      </div>
+
+      <div class="class-md-6">
+        <%= image_tag @noticia.foto, height:120, width:120 %>
+      </div><br>
 
       <br><%= f.submit "Editar Noticia", class: "btn btn-primary" %>
     <% end %>
