@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
   elsif !admin.include?(current_conta.tipo)
       redirect_to(root_url)
     end
+  end
+
+def conta_radmin
+  admin = ["admin","backoffice","reviewer"]
+    if current_conta.nil?
+      redirect_to(root_url)
+    elsif !admin.include?(current_conta.tipo)
+      redirect_to(root_url)
+    end
 
 
     # redirect_to(root_url) unless current_conta.tipo== "admin" || "backoffice"

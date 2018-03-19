@@ -2,21 +2,29 @@ class ContaController < ApplicationController
   before_action :conta_admin
   layout 'backoffice'
 
+
   def show
     @conta = Conta.find(params[:id])
   end
 
   def index
-    @contas = Conta.all
+    @contas = Conta.all.paginate(page: params[:page], per_page: 25)
   end
 
   def view
   end
 
   def create
+  admin = ["admin","backoffice"]
   @conta = Conta.new(conta_params)
     if @conta.tipo != "backoffice"
-      if @conta.tipo == "admin" && current_conta.tipo == "backoffice"
+      if @conta.tipo != "admin" && (admin.include?(current_conta.tipo))
+        if @conta.save
+          redirect_to conta_path
+        else
+          render 'new'
+        end
+      elsif (@conta == current_conta) || (current_conta.tipo=="backoffice")
         if @conta.save
           redirect_to conta_path
         else
@@ -68,25 +76,48 @@ class ContaController < ApplicationController
   end
 
   def update
+    admin = ["admin","backoffice"]
     @conta = Conta.find(params[:id])
-
-      if conta_params[:tipo] != "backoffice"
-        if conta_params[:tipo] == "admin" && current_conta.tipo == "backoffice"
-          if @conta.update_attributes(conta_params)
-            redirect_to conta_path
-          else
-            render 'edit'
-          end
+    if conta_params[:tipo] != "backoffice"
+      if (conta_params[:tipo] != "admin") && (admin.include?(current_conta.tipo))
+        if @conta.update_attributes(conta_params)
+          redirect_to conta_path
         else
-          message = "Você não tem permissão para editar administradores."
-          flash.now[:warning] = message
-          render 'new'
+          render 'edit'
+        end
+      elsif (@conta == current_conta) || (current_conta.tipo=="backoffice")
+        if @conta.update_attributes(conta_params)
+          redirect_to conta_path
+        else
+          render 'edit'
         end
       else
-        message = "Você não tem permissão para editar backoffice."
+        message = "Você não tem permissão para editar administradores."
         flash.now[:warning] = message
         render 'new'
       end
+    else
+      message = "Você não tem permissão para editar backoffice."
+      flash.now[:warning] = message
+      render 'new'
+    end
+      # if conta_params[:tipo] != "backoffice"
+      #   if conta_params[:tipo] == "admin" && current_conta.tipo == "backoffice"
+      #     if @conta.update_attributes(conta_params)
+      #       redirect_to conta_path
+      #     else
+      #       render 'edit'
+      #     end
+      #   else
+      #     message = "Você não tem permissão para editar administradores."
+      #     flash.now[:warning] = message
+      #     render 'new'
+      #   end
+      # else
+      #   message = "Você não tem permissão para editar backoffice."
+      #   flash.now[:warning] = message
+      #   render 'new'
+      # end
   end
 
 

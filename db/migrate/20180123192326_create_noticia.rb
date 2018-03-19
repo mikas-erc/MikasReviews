@@ -7,6 +7,8 @@ class CreateNoticia < ActiveRecord::Migration[5.1]
       t.date :data
       t.string :tags
       t.string :foto
+      t.boolean :ativo
+      t.references :conta, foreign_key: true
 
       t.timestamps
     end

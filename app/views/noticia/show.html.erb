@@ -12,6 +12,7 @@
     Texto:  <%= @noticia.texto %> <br>
     Data:  <%= @noticia.data %> <br>
     Tags: <%= @noticia.tags %> <br>
+    <br><br>Criador: <%= link_to @noticia.conta.nickname, @noticia.conta %>
 
     <div style="margin-top:20px;">
       <div class="col-md-6"><%=button_to 'Editar', edit_noticium_path(@noticia), method: :get, class:"btn btn-success btn-sm"%></div>

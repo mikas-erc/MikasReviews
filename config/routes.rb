@@ -40,7 +40,9 @@
     resources :jogo
     resources :noticia
     resources :conta
-    get '/conta/edit_password/:id', to: 'conta#edit_password', as: 'editcontapassword'
+    get '/aprovar', to: 'noticia#aprovarindex', as: 'aprovarindex'
+    delete '/desaprovar/:id', to: 'noticia#desaprovar', as: 'desaprovar'
+    patch '/aprovar/:id', to: 'noticia#aprovar', as: 'aprovar'
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

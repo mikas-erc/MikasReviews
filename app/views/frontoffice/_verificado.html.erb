@@ -1,0 +1,51 @@
+<%if @j.tipo == "empresa"%>
+  <% if @j.verificado? %>
+    <div class="col-md-6" >
+      <div style="margin-left:110%;">
+         <%=image_tag "verificado.png" %>
+      </div>
+      <div style="margin-top:30px;">
+         <span style="font-size:15px;">
+           <%if @j.nome.length>=20%>
+              <%=@j.nickname %>
+           <%else%>
+              <%=@j.nome%>
+           <%end%>
+         </span>
+        <br>
+         <span class="text-info"><%=@j.tipo%></span>
+      </div>
+    </div>
+  <%else%>
+    <div class="col-md-6" style="margin-top:50px;">
+      <span style="font-size:15px;">
+        <%if @j.nome.length>=20%>
+           <%=@j.nickname %>
+        <%else%>
+           <%=@j.nome%>
+        <%end%>
+      </span>
+      <br>
+      <span class="text-info"><%=@j.tipo%></span>
+    </div>
+  <%end%>
+<%else%>
+  <% if @j.verificado? %>
+    <div class="col-md-6">
+      <div style="margin-left:110%;">
+         <%=image_tag "verificado.png" %>
+      </div>
+      <div style="margin-top:30px;">
+        <span style="font-size:15px;"><%=@j.nickname%></span>
+        <br>
+        <span class="text-info"><%=@j.tipo%></span>
+      </div>
+    </div>
+  <%else%>
+    <div class="col-md-6" style="margin-top:50px;">
+      <span style="font-size:15px;"><%=@j.nickname%></span>
+      <br>
+      <span class="text-info"><%=@j.tipo%></span>
+    </div>
+  <%end%>
+<%end%>

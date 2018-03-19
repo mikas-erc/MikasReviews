@@ -14,9 +14,12 @@ ActiveRecord::Schema.define(version: 20180123192326) do
 
   create_table "classificacaos", force: :cascade do |t|
     t.integer "classificacao"
+    t.integer "jogo_id"
+    t.integer "conta_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [nil, "created_at"], name: "index_classificacaos_on_conta_id_and_created_at"
+    t.index ["conta_id", "created_at"], name: "index_classificacaos_on_conta_id_and_created_at"
+    t.index ["conta_id"], name: "index_classificacaos_on_conta_id"
   end
 
   create_table "conta", force: :cascade do |t|
@@ -58,8 +61,11 @@ ActiveRecord::Schema.define(version: 20180123192326) do
     t.date "data"
     t.string "tags"
     t.string "foto"
+    t.boolean "ativo"
+    t.integer "conta_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["conta_id"], name: "index_noticia_on_conta_id"
   end
 
   create_table "reviews", force: :cascade do |t|

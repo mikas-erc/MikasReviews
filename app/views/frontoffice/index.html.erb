@@ -9,11 +9,13 @@
         <center><h1> últimas noticias </h1></center>
 
         <% @ultimas_noticias.each do |noticia| %>
-        <div class="col-md-12 hl">
-          <%= link_to noticia.nome, view_noticia_path(noticia) %> <% noticia.data %> <br>
-          <%= image_tag noticia.foto %> <br>
+        <div class="col-md-12">
+          <%= link_to view_noticia_path(noticia) do%>
+          <span style="font-size:30px;"><%=noticia.nome%></span>
+          <span class="text-muted"><%= noticia.data %></span> <br>
+          <center><%= image_tag noticia.foto %></center> <br>
           <%= noticia.descricao %> <br>
-
+          <%end%>
         </div>
         <br>
         <%end%>
@@ -41,11 +43,22 @@
         <% end %>
         <div class="col-md-12 main">
           <br>
-          <%= link_to "Jogos perto de sair", jogo_view_path %>
-          <br>
-          <br>
-          <br>
-          <br>
+          <center><span style="font-size:20px;margin-bottom:20px;"> Jogos perto de sair</span></center>
+          <div class="col-md-12" style="margin-top:20px">
+          <% @ultimos_jogos.each do |n| %>
+          <div class="col-md-12" style="margin-bottom:20px;">
+              <div class="col-md-3" style="margin:0px">
+                <%= image_tag n.foto, style:"width:60px;height:60px" %>
+              </div>
+              <div class="col-md-9" style="margin:0px">
+                <span style="font-size:15px;"><%= n.nome %></span>
+                <span class="text-muted"><%=n.data_de_lancamento%></span><br>
+                <span class="preco" style="color:green"><%=n.preco%></span>
+
+              </div>
+          </div>
+          <%end%>
+          </div>
         </div>
         <br>
         <div class="col-md-12 main">

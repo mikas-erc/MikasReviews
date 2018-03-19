@@ -1,0 +1,20 @@
+<div class="row">
+<% admin = ["admin","backoffice"] %>
+<% review = ["reviewer","backoffice","admin"]%>
+
+
+<h1> PAGINA ADMINISTRATIVA </h1>
+
+<% if review.include?(current_conta.tipo) %>
+  <div class="col-md-3 main">
+    <center>  <%= button_to "Criar Noticia", new_noticium_path, method: :get, class:"btn btn-success" %> </center>
+  </div>
+<% end%>
+<% if admin.include?(current_conta.tipo) %>
+  <div class="col-md-3 main">
+    <center> <%= button_to "Aprovar noticias", aprovarindex_path, method: :get, class:"btn btn-success" %> </center>
+  </div>
+<%end%>
+
+
+</div>

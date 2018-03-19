@@ -4,7 +4,8 @@ class FrontofficeController < ApplicationController
 
 
   def index
-    @ultimas_noticias = Noticium.last(3).to_a.reverse
+    @ultimas_noticias = Noticium.where(ativo:true).last(3).to_a.reverse
+    @ultimos_jogos = Jogo.where("data_de_lancamento >= ?",Time.zone.today).order("data_de_lancamento DESC").last(3)
   end
 
   def settings
@@ -12,6 +13,9 @@ class FrontofficeController < ApplicationController
 
   def view_noticia
     @noticia = Noticium.find(params[:id])
+    if !@noticia.ativo?
+      redirect_to root_path
+    end
   end
 
   def view_jogo
@@ -27,7 +31,7 @@ class FrontofficeController < ApplicationController
   end
 
   def noticias_index
-    @noticias = Noticium.all.paginate(page: params[:page], per_page: 10)
+    @noticias = Noticium.where(ativo:true).paginate(page: params[:page], per_page: 10)
   end
 
   def contas_index

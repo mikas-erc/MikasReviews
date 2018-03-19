@@ -1,5 +1,6 @@
 class NoticiaController < ApplicationController
-  before_action :conta_admin
+  before_action :conta_admin, except: [:create,:new,:show]
+  before_action :conta_radmin, only: [:create,:new,:show]
   layout 'backoffice'
 
     def view
@@ -12,6 +13,8 @@ class NoticiaController < ApplicationController
 
     def create
     @noticia = Noticium.new(noticia_params)
+    @noticia.ativo=false
+    @noticia.conta=current_conta
       if @noticia.save
         flash[:info] = "Noticia adicionada com sucesso!"
         redirect_to noticia_path
@@ -20,6 +23,20 @@ class NoticiaController < ApplicationController
       end
     end
 
+    def aprovar
+      @noticia = Noticium.find(params[:id])
+      @noticia.update_attribute(:ativo,true)
+      redirect_to view_noticia_path(@noticia)
+    end
+
+    def desaprovar
+      @noticia = Noticium.find(params[:id]).destroy
+      redirect_to aprovarindex_path
+    end
+
+    def aprovarindex
+      @noticias = Noticium.where(ativo:false)
+    end
 
     def show
       @noticia = Noticium.find(params[:id])
@@ -50,7 +67,7 @@ class NoticiaController < ApplicationController
     end
 
     def noticia_params
-    params.require(:noticium).permit(:nome,:descricao, :texto, :data, :foto, :tags)
+    params.require(:noticium).permit(:nome,:descricao, :texto, :data, :foto,  :ativo, :tags)
 
     end
 
