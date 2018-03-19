@@ -1,3 +1,4 @@
+<%radmin= ["admin","backoffice","reviewer"]%>
 <div class="row">
 <% if (@dev = Conta.find_by(nickname:@jogo.developer)).nil? %>
   <% @dev=0 %>
@@ -22,6 +23,18 @@
     <center><div class="col-md-12">
       <%= image_tag @jogo.foto %><br>
     </div></center>
+
+    <%if !current_conta.nil? && radmin.include?(current_conta.tipo) && Review.where(jogo_id:@jogo.id).where(conta_id:current_conta.id).nil? %>
+
+    <div class="col-md-12" style="margin-top:20px;">
+      <%= form_tag({controller: "review", action: "new"}, method: :get) do %>
+        <div><%= hidden_field_tag :jogo_id, @jogo.id %></div>
+        <div><%= submit_tag "Criar Review", class: "btn btn-success btn-sm" %></div>
+      <%end%>
+    </div>
+
+    <%end%>
+
     <div class="col-md-12" style="margin-top:20px;">
       <%= @jogo.descricao %><br>
     </div>
@@ -31,8 +44,17 @@
         Reviews do jogo "<%=@jogo.nome%>"
       </span>
 
-      <div style="margin-top:20px;"><span>Review escolhida pela MikasReviews:</span></div>
+      <!-- <div style="margin-top:20px;"><span>Review escolhida pela MikasReviews:</span></div> -->
+      <% Review.where(jogo_id:@jogo.id).each do |n| %>
+        <div class="col-md-12">
+          <%=link_to n.conta.nome ,view_conta_path(n.conta)%>
+          <span class="text-muted"><%=n.classificacao%>/10</span><br>
+          <%=n.texto%>
+        </div>
+      <%end%>
+
     </div>
+
     <div class="col-md-12" style="margin-top:30px; width:100%;">
       <span class="text-muted"><%= @jogo.preco %></span>
     </div>

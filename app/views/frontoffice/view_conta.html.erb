@@ -9,11 +9,32 @@
        <span class="text-muted"> <%= @conta.nome%> </span><br>
        <span class="text-info"><%= @conta.tipo %></span><br>
     </div>
-    <div class="col-md-12" style="margin-bottom:250px">
+    <div class="col-md-12" style="margin-bottom:30px">
+      <h1> Jogos Publicados </h1>
+
+      <% if @conta.tipo="empresa" %>
+        <% Jogo.where(developer:@conta.nickname).each do |n| %>
+        <%= link_to view_jogo_path(n), class:"semlink" do %>
+          <div class="col-md-12" style="margin-bottom:20px;margin-top:40px;">
+              <div class="col-md-3" style="margin:0px">
+                <%= image_tag n.foto, style:"width:60px;height:60px" %>
+              </div>
+              <div class="col-md-9" style="margin:0px">
+                <span style="font-size:15px;"><%= n.nome %></span>
+                <span class="text-muted"><%=n.data_de_lancamento%></span><br>
+                <span class="preco" style="color:green"><%=n.preco%></span>
+
+              </div>
+          </div>
+        <%end%>
+        <%end%>
+      <%end%>
+      <% if @conta.tipo!="empresa"%>
       reviews favoritas + analisadores favoritos ou jogos publicados
+      <%end%>
     </div>
     <div class="col-md-12" style="margin-bottom:50px">
-     comentarios
+     <!-- comentarios -->
    </div>
  </div>
 </div>

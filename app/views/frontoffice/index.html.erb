@@ -10,7 +10,7 @@
 
         <% @ultimas_noticias.each do |noticia| %>
         <div class="col-md-12">
-          <%= link_to view_noticia_path(noticia) do%>
+          <%= link_to view_noticia_path(noticia), class:"semlink" do%>
           <span style="font-size:30px;"><%=noticia.nome%></span>
           <span class="text-muted"><%= noticia.data %></span> <br>
           <center><%= image_tag noticia.foto %></center> <br>
@@ -46,6 +46,7 @@
           <center><span style="font-size:20px;margin-bottom:20px;"> Jogos perto de sair</span></center>
           <div class="col-md-12" style="margin-top:20px">
           <% @ultimos_jogos.each do |n| %>
+          <%=link_to view_jogo_path(n), class:"semlink" do %>
           <div class="col-md-12" style="margin-bottom:20px;">
               <div class="col-md-3" style="margin:0px">
                 <%= image_tag n.foto, style:"width:60px;height:60px" %>
@@ -58,16 +59,33 @@
               </div>
           </div>
           <%end%>
+          <%end%>
           </div>
         </div>
         <br>
         <div class="col-md-12 main">
           <br>
-          <%= link_to "Ultimas Reviews", review_view_path %>
-          <br>
-          <br>
-          <br>
-          <br>
+          <center><span style="font-size:20px;margin-bottom:20px;"> Ultimas Reviews</span></center>
+          <div class="col-md-12" style="margin-top:20px">
+          <% @ultimas_reviews.each do |n| %>
+          <% j = Jogo.find(n.jogo_id) %>
+          <% c = Conta.find(n.conta_id) %>
+          <%=link_to view_jogo_path(j), class:"semlink" do %>
+          <div class="col-md-12" style="margin-bottom:20px;">
+              <div class="col-md-3" style="margin:0px">
+                <%= image_tag j.foto, style:"width:60px;height:60px" %>
+              </div>
+              <div class="col-md-9" style="margin:0px">
+                <span style="font-size:15px;"><%= j.nome %></span>
+                <span class="text-muted"><%=j.data_de_lancamento%></span><br>
+                <%=link_to c.nome, view_conta_path(c)%><span class="text-muted"> <%=n.classificacao%>/10</span><br>
+                <%=n.texto%>
+
+              </div>
+          </div>
+          <%end%>
+          <%end%>
+          </div>
         </div>
         <br>
         <div class="col-md-12 main">

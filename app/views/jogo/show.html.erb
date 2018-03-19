@@ -18,6 +18,32 @@
         <div class="col-md-6"><%=button_to 'Editar', edit_jogo_path(@jogo), method: :get, class:"btn btn-success btn-sm"%></div>
         <div class="col-md-6"><%=button_to 'Apagar', @jogo, method: :delete, data: { confirm:'Apagar jogo?'}, class:"btn btn-danger btn-sm"%></div>
     </div>
+
+    <div class="col-md-12" style="margin-top:20px;margin-bottom:20px"><center><span style="font-size:20px">Reviews do <%=@jogo.nome%></span></center></div>
+    <%@reviews = Review.where(jogo_id:@jogo.id)%>
+    <table class="table table-striped">
+      <thead>
+         <tr>
+           <th>ID</th>
+           <th>Texto</th>
+           <th>Classificação</th>
+           <th>Conta</th>
+           <th>Ações</th>
+         </tr>
+      </thead>
+      <% @reviews.each do |t| %>
+       <tbody>
+         <td> <%=t.id%> </td>
+         <td> <%= t.texto %> </td>
+         <td> <%= t.classificacao %>/10 </td>
+         <td> <%= link_to t.conta.nome, t.conta%> </td>
+         <td>
+           <%=button_to 'Editar', edit_review_path(t), method: :get, class:"btn btn-success btn-sm"%>
+           <%=button_to 'Apagar', t, method: :delete, data: { confirm:'Apagar review?'}, class:"btn btn-danger btn-sm"%>
+         </td>
+       </tbody>
+      <%end%>
+     </table>
   </div>
 
 

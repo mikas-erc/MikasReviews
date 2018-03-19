@@ -1,6 +1,6 @@
 <div style="margin-left:15%" id="collection_index">
   <% @noticias.each do |j| %>
-    <%= link_to view_noticia_path(j) do %>
+    <%= link_to view_noticia_path(j), class:"semlink" do %>
     <div class="col-md-10 main">
        <div class="col-md-4" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
         <center> <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %> </center>

@@ -40,9 +40,12 @@
     resources :jogo
     resources :noticia
     resources :conta
+    resources :review
+    post '/createaccount', to: 'review#new'
     get '/aprovar', to: 'noticia#aprovarindex', as: 'aprovarindex'
     delete '/desaprovar/:id', to: 'noticia#desaprovar', as: 'desaprovar'
     patch '/aprovar/:id', to: 'noticia#aprovar', as: 'aprovar'
+
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

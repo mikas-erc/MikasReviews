@@ -33,7 +33,7 @@ Conta.create!(nome:"teste2",
               email:"teste2@gmail.com",
               password:"teste2",
               password_confirmation:"teste2",
-              tipo:"user",
+              tipo:"reviewer",
               ativo:true,
               ativado_em: Time.zone.now,
               foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))

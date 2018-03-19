@@ -71,9 +71,13 @@ ActiveRecord::Schema.define(version: 20180123192326) do
   create_table "reviews", force: :cascade do |t|
     t.text "texto"
     t.integer "classificacao"
+    t.integer "conta_id"
+    t.integer "jogo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [nil, "created_at"], name: "index_reviews_on_conta_id_and_created_at"
+    t.index ["conta_id", "created_at"], name: "index_reviews_on_conta_id_and_created_at"
+    t.index ["conta_id"], name: "index_reviews_on_conta_id"
+    t.index ["jogo_id"], name: "index_reviews_on_jogo_id"
   end
 
 end

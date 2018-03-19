@@ -1,0 +1,18 @@
+<% @jogo = Jogo.find(@review.jogo_id) %>
+<h1>Editar Review do jogo "<%=@jogo.nome%>"</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 main">
+    <%= form_for(@review, url: {action: "update"}) do |f| %>
+      <%= hidden_field_tag :jogo_id, @jogo.id %>
+
+      <%= f.label :texto %>
+      <%= f.text_area :texto, class: 'form-control',style:"height:300px"%>
+
+      <%= f.label :classificacao %>
+      <%= f.number_field :classificacao,in:1..10, step:0, class: 'form-control' %>
+
+      <br><%= f.submit "Editar Review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

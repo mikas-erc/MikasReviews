@@ -6,6 +6,7 @@ class FrontofficeController < ApplicationController
   def index
     @ultimas_noticias = Noticium.where(ativo:true).last(3).to_a.reverse
     @ultimos_jogos = Jogo.where("data_de_lancamento >= ?",Time.zone.today).order("data_de_lancamento DESC").last(3)
+    @ultimas_reviews = Review.last(3).to_a.reverse
   end
 
   def settings

@@ -22,9 +22,10 @@ body {
   background-color: #3a5fde;
 }
 
-a:link, a:visited, a:hover, a:active, a:focus {
-   color: inherit;
- }
+  a.semlink:link, a.semlink:visited, a.semlink:hover, a.semlink:active, a.semlink:focus {
+     text-decoration: none;
+     color: inherit;
+   }
 
 footer {
   text-align: center;

@@ -1,14 +1,14 @@
 <div style="margin-left:15%" id="collection_index">
   <% @contas.each do |j| %>
   <% @j = j %>
-    <%= link_to view_conta_path(@j) do %>
+    <%= link_to view_conta_path(@j), class:"semlink" do %>
     <div class="col-md-3 main">
        <div class="col-md-6" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
          <%= image_tag @j.foto, height:120, width:120 %>
        </div>
 
        <div><%= render 'verificado' %></div>
-       
+
     </div>
     <%end%>
   <%end%>
