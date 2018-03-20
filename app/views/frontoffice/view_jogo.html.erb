@@ -24,7 +24,7 @@
       <%= image_tag @jogo.foto %><br>
     </div></center>
 
-    <%if !current_conta.nil? && radmin.include?(current_conta.tipo) && Review.where(jogo_id:@jogo.id).where(conta_id:current_conta.id).nil? %>
+    <%if !current_conta.nil? && radmin.include?(current_conta.tipo) && !Review.where(jogo_id:@jogo.id).where(conta_id:current_conta.id).nil? %>
 
     <div class="col-md-12" style="margin-top:20px;">
       <%= form_tag({controller: "review", action: "new"}, method: :get) do %>

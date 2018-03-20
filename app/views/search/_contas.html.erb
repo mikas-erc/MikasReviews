@@ -1,4 +1,3 @@
-<h1>Contas</h1>
 
 <%if @contas.blank? %>
   <div class="col-md-12" style="margin-bottom:40px;margin-top:10px">
@@ -24,11 +23,12 @@
   <%end%>
 <%end%>
 </div>
-<div class="col-md-12 col-md-offset-4">
-  <div id="collection_paginator_contas">
+<div class="col-md-12">
+  <center><div id="collection_paginator_contas">
     <%= will_paginate @contas,:param_name => 'contas_page'%>
-  </div>
+  </div></center>
 </div>
+
 <%end%>
 <script type="text/javascript">
   $(document).ready( function() {
