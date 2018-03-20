@@ -1,0 +1,40 @@
+<h1>Contas</h1>
+
+<%if @contas.blank? %>
+  <div class="col-md-12" style="margin-bottom:40px;margin-top:10px">
+    <center>
+      <span class="text-muted">
+        Não foram encontradas contas.
+      </span>
+    </center>
+  </div>
+<%else%>
+<div id="collection_index_contas">
+  <%@contas.each do |c|%>
+  <% @j = c %>
+    <%= link_to view_conta_path(@j), class:"semlink" do %>
+    <div class="col-md-3" >
+       <div class="col-md-6" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
+         <%= image_tag @j.foto, height:120, width:120 %>
+       </div>
+
+       <div><%= render 'verificado' %></div>
+
+    </div>
+  <%end%>
+<%end%>
+</div>
+<div class="col-md-12 col-md-offset-4">
+  <div id="collection_paginator_contas">
+    <%= will_paginate @contas,:param_name => 'contas_page'%>
+  </div>
+</div>
+<%end%>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator_contas a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index_contas' )
+    })
+  })
+</script>

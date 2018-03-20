@@ -18,6 +18,11 @@ class Conta < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
+  def self.search(search)
+    search=search.downcase.gsub(/\s+/, "%")
+    where("LOWER(nome) LIKE ? OR LOWER(nickname) LIKE ?", "%#{search}%","%#{search}%")
+  end
+
 
   def self.new_token
     SecureRandom.urlsafe_base64

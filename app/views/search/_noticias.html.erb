@@ -1,0 +1,42 @@
+<h1>Noticias</h1>
+
+<%if @noticias.blank? %>
+  <div class="col-md-12" style="margin-bottom:40px;margin-top:10px">
+    <center>
+      <span class="text-muted">
+        Não foram encontradas noticias.
+      </span>
+    </center>
+  </div>
+<%else%>
+<div id="collection_index_noticias">
+<% @noticias.each do |j| %>
+  <%= link_to view_noticia_path(j), class:"semlink" do %>
+  <div class="col-md-10">
+     <div class="col-md-4" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
+      <center> <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %> </center>
+     </div>
+     <div class="col-md-8" style="padding:0px;">
+         <div class="titulo" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
+         <span class="text-muted"><%=j.data%></span></div>
+         <div class="descricao" style="margin-top:20px;"><span> <%=j.descricao%> </span></div><br>
+         <div class="tags"><span> <%=j.tags%> </span></div>
+     </div>
+  </div>
+  <%end%>
+<%end%>
+</div>
+<div class="col-md-12 col-md-offset-4">
+  <div id="collection_paginator_noticias">
+    <%= will_paginate @noticias,:param_name => 'noticias_page'%>
+  </div>
+</div>
+<%end%>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $('#collection_paginator_noticias a').each( function() {
+      $(this).attr( 'data-remote', 'true' )
+      $(this).attr( 'data-replace', '#collection_index_noticias' )
+    })
+  })
+</script>

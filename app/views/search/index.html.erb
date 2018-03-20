@@ -1,0 +1,23 @@
+<div class="row">
+<%if params[:search].blank?%>
+  <div class="col-md-12 main" style="margin-top:50px;margin-bottom:50px;">
+    <center><span style="font-size:30px;">Tente procurar algo!</span></center>
+  </div>
+<%else%>
+  <div class="col-md-12 main">
+    <div class = "sort_paginate_ajax_contas"><%= render 'contas' %></div>
+  </div>
+  <div class="col-md-12 main">
+    <div class = "sort_paginate_ajax_empresas"><%= render 'empresas' %></div>
+  </div>
+  <div class="col-md-12 main">
+    <div class = "sort_paginate_ajax_jogos"><%= render 'jogos' %></div>
+  </div>
+  <div class="col-md-12 main">
+    <div class = "sort_paginate_ajax_noticias"><%= render 'noticias' %></div>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<%end%>
+</div>

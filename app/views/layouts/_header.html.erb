@@ -10,9 +10,11 @@
       <li><%= link_to "Noticias", fnoticias_index_path %></li>
       <li><%= link_to "Empresas", fempresas_index_path %></li>
       <li><%= link_to "Utilizadores", fcontas_index_path %></li>
-      <li style="margin-top:10px;"><form><input type="text"></li>
-      <li style="margin-top:8px; margin-left:5px;"><button type="button" class="btn btn-default">Procurar</button></form></li>
-    </ul>
+      <li style="margin-top:10px;"><%= form_tag({controller:"search", action:"index"}, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Pesquisar..." %></li>
+      <li style="margin-top:8px; margin-left:5px;"><%= submit_tag "Procurar", :name => nil, class:"btn btn-primary" %></li>
+       <% end %>
+         </ul>
     <ul class="nav navbar-nav navbar-right">
       <li>
           <% if logged_in? %>
