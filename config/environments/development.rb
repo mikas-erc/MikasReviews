@@ -32,7 +32,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
   #config.action_mailer.delivery_method = :test
   host = 'localhost:3000' # Don't use this literally; use your local dev host instead
-  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
 
   config.action_mailer.perform_caching = false
 

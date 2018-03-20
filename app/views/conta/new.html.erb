@@ -17,10 +17,11 @@
       <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %><br>
 
       <%= f.label :tipo %>
-      <%= f.text_field :tipo, class: 'form-control' %>
+      <% tipos = [["backoffice","backoffice"],["admin","admin"],["reviewer","reviewer"],["empresa","empresa"],["user","user"]] %>
+      <%= f.select :tipo, options_for_select(tipos), class: 'form-control' %><br>
 
       <%= f.label :foto %>
       <%= f.file_field :foto %>

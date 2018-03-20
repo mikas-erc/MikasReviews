@@ -17,4 +17,7 @@
 <%end%>
 
 
+<% tipos = [["backoffice","backoffice"],["admin","admin"],["reviewer","reviewer"],["empresa","empresa"],["user","user"]] %>
+<%= f.options_for_select(tipos, :tipo), class: 'form-control' %><br>
+
 </div>

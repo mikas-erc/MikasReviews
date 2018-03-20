@@ -11,10 +11,12 @@
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :nome %>
-      <%= f.text_field :nome, class: 'form-control' %>
+      <%= f.text_field :nome, class: 'form-control' %><br>
 
       <%= f.label :tipo %>
-      <%= f.text_field :tipo, class: 'form-control' %><br>
+      <% tipos = [["backoffice","backoffice"],["admin","admin"],["reviewer","reviewer"],["empresa","empresa"],["user","user"]] %>
+      <%= f.select :tipo, options_for_select(tipos), class: 'form-control' %><br>
+
 
       <div class="col-md-6">
         <%= f.label :foto %>
