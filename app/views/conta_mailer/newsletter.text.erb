@@ -1,0 +1,16 @@
+MikasReviews
+
+<% @noticias = Noticium.all %>
+
+<% if @noticias.where(novo:true).any? %>
+Noticias novas
+
+  <% @noticias.where(novo:true).each do |d| %>
+    <%= d.nome%>
+  <%end%>
+
+<%else%>
+
+  Não há atividade nova esta semana
+
+<%end%>

@@ -41,6 +41,7 @@
     resources :noticia
     resources :conta
     resources :review
+    get '/newsletter', to: 'backoffice#newsletter', as: 'newsletter'
     post '/createaccount', to: 'review#new'
     get '/aprovar', to: 'noticia#aprovarindex', as: 'aprovarindex'
     delete '/desaprovar/:id', to: 'noticia#desaprovar', as: 'desaprovar'

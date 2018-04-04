@@ -1,0 +1,15 @@
+<h1>MikasReviews</h1>
+
+<% @noticias = Noticium.all %>
+
+<% if @noticias.where(novo:true).any? %>
+<h3>Noticias novas</h3>
+  <% @noticias.where(novo:true).each do |d| %>
+    <%= link_to d.nome, view_noticia_url(d)%><br>
+  <%end%>
+
+<%else%>
+
+  Não há atividade nova esta semana
+
+<%end%>

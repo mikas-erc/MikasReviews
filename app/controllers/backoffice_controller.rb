@@ -5,4 +5,9 @@ layout 'backoffice'
 def index
 end
 
+def newsletter
+  Newsletter.newsletter
+  redirect_to backhome_path
+end
+
 end

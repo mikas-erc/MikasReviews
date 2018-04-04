@@ -15,4 +15,10 @@
     <center> <%= button_to "Aprovar noticias", aprovarindex_path, method: :get, class:"btn btn-success" %> </center>
   </div>
 <%end%>
+<% if admin.include?(current_conta.tipo) %>
+  <div class="col-md-3 main">
+    <center> <%= button_to "Mandar Newsletter Manualmente", newsletter_path, method: :get, class:"btn btn-success" %> </center>
+  </div>
+<%end%>
+
 </div>
