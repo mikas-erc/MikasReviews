@@ -1,0 +1,2 @@
+class Steam < ApplicationRecord
+end

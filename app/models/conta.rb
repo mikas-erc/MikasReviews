@@ -23,6 +23,12 @@ class Conta < ApplicationRecord
     where("LOWER(nome) LIKE ? OR LOWER(nickname) LIKE ?", "%#{search}%","%#{search}%")
   end
 
+  def self.upvoted?(jogo)
+    Classificacao.where(conta_id:self.id,jogo_id:jogo.id,classificacao:1).any?
+  end
+
+  
+
 
   def self.new_token
     SecureRandom.urlsafe_base64

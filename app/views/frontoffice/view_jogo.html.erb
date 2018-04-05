@@ -19,12 +19,21 @@
     </div>
     <div class="col-md-6" style="margin:0px;">
       <span style="font-size:20px; color:green; margin-left:90%"><%=@jogo.preco%>€</span>
+      <div style="display:block;margin-left:95%">
+      <% if !current_conta.nil? %>
+        <div class = "class_ajax"><%= render 'classificacao' %></div>
+      <%else%>
+        <%=link_to image_tag('upvote.png', style:"width:20px"), login_path%><br>
+        <center><%=classtotal(@jogo)%></center>
+        <%=link_to image_tag('downvote.png', style:"width:20px"), login_path%>
+      <%end%>
+      </div>
     </div>
     <center><div class="col-md-12">
       <%= image_tag @jogo.foto %><br>
     </div></center>
 
-    <%if !current_conta.nil? && radmin.include?(current_conta.tipo) && !Review.where(jogo_id:@jogo.id).where(conta_id:current_conta.id).nil? %>
+    <%if !current_conta.nil? && radmin.include?(current_conta.tipo) && !Review.where(jogo_id:@jogo.id,conta_id:current_conta.id).any? %>
 
     <div class="col-md-12" style="margin-top:20px;">
       <%= form_tag({controller: "review", action: "new"}, method: :get) do %>
@@ -42,11 +51,25 @@
     <div class="col-md-12" style="margin-top:30px;">
       <span style="font-size:20px;">
         Reviews do jogo "<%=@jogo.nome%>"
-      </span>
+        <% if Review.where(jogo_id:@jogo.id).any? %>
+         - Media de
+          <%@c = Review.where(jogo_id:@jogo.id).average(:classificacao)%>
+          <%if @c > 4%>
+            <%if @c >7%>
+              <span style="color:green;"><%=@c%></span>
+            <%else%>
+              <span style="color:#b0b012;"><%=@c%></span>
+            <%end%>
+          <%else%>
+            <span style="color:red;"><%=@c%></span>
+          <%end%>
+              /10
+        <%end%>
+      </span><br><br>
 
       <!-- <div style="margin-top:20px;"><span>Review escolhida pela MikasReviews:</span></div> -->
       <% Review.where(jogo_id:@jogo.id).each do |n| %>
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-bottom:10px;">
           <%=link_to n.conta.nome ,view_conta_path(n.conta)%>
           <span class="text-muted"><%=n.classificacao%>/10</span><br>
           <%=n.texto%>

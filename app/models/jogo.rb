@@ -8,4 +8,5 @@ class Jogo < ApplicationRecord
     where("LOWER(nome) LIKE ? ", "%#{search}%")
   end
 
+
 end

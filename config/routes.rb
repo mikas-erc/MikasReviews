@@ -12,6 +12,8 @@
   get 'conta/index'
   get 'noticias/view'
 
+  post '/upvote/:id', to: 'classificao#upvote', as: 'upvote'
+  post '/downvote/:id', to: 'classificao#downvote', as: 'downvote'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
