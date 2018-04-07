@@ -4,7 +4,7 @@ class FrontofficeController < ApplicationController
 
 
   def index
-    @ultimas_noticias = Noticium.where(ativo:true).last(3).to_a.reverse
+    @ultimas_noticias = Noticium.where(ativo:true).last(5).to_a.reverse
     @ultimos_jogos = Jogo.where("data_de_lancamento >= ?",Time.zone.today).order("data_de_lancamento DESC").last(3)
     @ultimas_reviews = Review.last(3).to_a.reverse
   end
@@ -17,10 +17,23 @@ class FrontofficeController < ApplicationController
     if !@noticia.ativo?
       redirect_to root_path
     end
+    @ntags = @noticia.tags.split(',')
+    @ntags.each do |n|
+      if @noticiasmesmotipo.nil?
+        @noticiasmesmotipo = Noticium.searchtipo(n).where.not(id:@noticia.id).shuffle.last(3)
+      end
+    end
   end
 
   def view_jogo
     @jogo = Jogo.find(params[:id])
+    @jtags = @jogo.tags.split(',')
+    @reviews = Review.where(jogo_id:@jogo.id).paginate(page: params[:page], per_page: 10)
+    @jtags.each do |n|
+     if @jogosmesmotipo.nil?
+       @jogosmesmotipo = Jogo.searchtipo(n).where.not(id:@jogo.id).shuffle.last(3)
+     end
+   end
   end
 
   def view_conta

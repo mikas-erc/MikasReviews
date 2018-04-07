@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33852faf-6fde-4758-abf1-4ff706842602" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/controllers/frontoffice_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/frontoffice_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/search_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/noticias_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/noticias_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/jogo.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/jogo.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/noticium.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/noticium.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontoffice/_jogos_index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/frontoffice/_jogos_index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontoffice/_noticias_index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/frontoffice/_noticias_index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontoffice/view_conta.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/frontoffice/view_conta.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontoffice/view_jogo.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/frontoffice/view_jogo.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontoffice/view_noticia.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/frontoffice/view_noticia.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/search/_noticias.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search/_noticias.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/search/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/search/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20180123192131_create_jogos.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180123192131_create_jogos.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/1/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/1/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/10/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/10/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/100/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/100/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/101/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/101/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/102/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/102/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/103/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/103/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/104/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/104/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/11/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/11/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/12/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/12/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/13/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/13/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/14/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/14/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/15/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/15/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/16/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/16/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/17/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/17/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/18/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/18/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/19/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/19/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/2/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/2/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/20/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/20/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/21/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/21/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/22/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/22/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/23/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/23/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/24/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/24/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/25/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/25/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/26/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/26/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/27/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/27/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/28/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/28/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/29/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/29/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/3/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/3/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/30/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/30/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/31/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/31/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/32/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/32/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/33/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/33/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/34/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/34/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/35/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/35/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/36/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/36/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/37/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/37/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/38/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/38/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/39/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/39/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/4/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/4/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/40/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/40/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/41/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/41/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/42/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/42/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/43/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/43/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/44/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/44/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/45/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/45/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/46/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/46/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/47/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/47/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/48/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/48/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/49/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/49/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/5/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/5/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/50/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/50/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/51/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/51/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/52/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/52/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/53/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/53/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/54/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/54/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/55/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/55/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/56/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/56/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/57/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/57/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/58/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/58/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/59/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/59/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/6/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/6/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/60/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/60/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/61/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/61/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/62/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/62/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/63/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/63/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/64/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/64/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/65/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/65/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/66/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/66/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/67/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/67/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/68/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/68/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/69/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/69/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/7/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/7/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/70/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/70/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/71/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/71/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/72/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/72/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/73/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/73/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/74/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/74/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/75/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/75/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/76/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/76/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/77/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/77/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/78/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/78/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/79/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/79/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/8/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/8/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/80/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/80/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/81/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/81/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/82/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/82/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/83/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/83/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/84/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/84/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/85/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/85/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/86/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/86/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/87/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/87/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/88/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/88/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/89/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/89/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/9/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/9/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/90/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/90/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/91/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/91/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/92/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/92/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/93/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/93/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/94/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/94/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/95/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/95/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/96/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/96/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/97/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/97/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/98/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/98/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/conta/foto/99/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/conta/foto/99/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/1/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/1/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/10/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/10/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/11/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/11/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/12/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/12/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/13/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/13/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/14/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/14/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/15/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/15/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/16/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/16/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/17/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/17/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/18/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/18/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/19/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/19/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/2/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/2/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/20/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/20/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/21/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/21/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/22/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/22/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/23/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/23/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/24/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/24/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/25/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/25/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/26/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/26/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/27/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/27/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/28/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/28/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/29/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/29/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/3/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/3/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/30/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/30/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/4/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/4/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/5/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/5/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/6/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/6/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/7/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/7/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/8/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/8/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/jogo/foto/9/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/jogo/foto/9/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/1/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/1/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/10/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/10/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/11/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/11/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/12/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/12/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/13/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/13/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/14/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/14/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/15/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/15/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/16/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/16/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/17/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/17/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/18/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/18/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/19/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/19/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/2/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/2/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/20/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/20/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/21/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/21/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/22/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/22/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/23/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/23/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/24/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/24/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/25/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/25/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/26/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/26/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/27/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/27/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/28/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/28/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/29/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/29/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/3/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/3/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/30/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/30/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/4/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/4/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/5/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/5/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/6/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/6/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/7/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/7/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/8/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/8/120x120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/noticium/foto/9/120x120.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/noticium/foto/9/120x120.png" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.bundle/" />
+    <ignored path="$PROJECT_DIR$/components/" />
+    <ignored path="$PROJECT_DIR$/public/system/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path="$PROJECT_DIR$/vendor/bundle/" />
+    <ignored path="$PROJECT_DIR$/vendor/cache/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="frontoffice_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/frontoffice_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="292" />
+    <option name="y" value="44" />
+    <option name="width" value="1400" />
+    <option name="height" value="921" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MikasReviews" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MikasReviews" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MikasReviews" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MikasReviews" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MikasReviews" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MikasReviews" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Rails.Development: MikasReviews">
+    <configuration name="Development: MikasReviews" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="MikasReviews" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="development" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+    </configuration>
+    <configuration name="Production: MikasReviews" type="RailsRunConfigurationType" factoryName="Rails">
+      <predefined_log_file id="RUBY_RAILS_SERVER" enabled="true" />
+      <module name="MikasReviews" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="SCRIPT_ARGS" VALUE="" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="PORT" VALUE="3000" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="DUMMY_APP" VALUE="test/dummy" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="RAILS_SERVER_TYPE" VALUE="Default" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="ENVIRONMENT_TYPE" VALUE="production" />
+      <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
+    </configuration>
+    <configuration name="spec: MikasReviews" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="MikasReviews" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="spec" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":rspec " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+    </configuration>
+    <configuration name="test: MikasReviews" type="RakeRunConfigurationType" factoryName="Rake">
+      <module name="MikasReviews" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="test" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE=":test_unit " />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Rake.test: MikasReviews" />
+      <item itemvalue="Rake.spec: MikasReviews" />
+      <item itemvalue="Rails.Production: MikasReviews" />
+      <item itemvalue="Rails.Development: MikasReviews" />
+    </list>
+  </component>
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33852faf-6fde-4758-abf1-4ff706842602" name="Default" comment="" />
+      <created>1523123077480</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1523123077480</updated>
+      <workItem from="1523123081871" duration="404000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="404000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="292" y="44" width="1400" height="921" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/controllers/frontoffice_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

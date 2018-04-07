@@ -9,7 +9,11 @@
            <div class="titulo" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
            <span class="text-muted"><%=j.data%></span></div>
            <div class="descricao" style="margin-top:20px;"><span> <%=j.descricao%> </span></div><br>
-           <div class="tags"><span> <%=j.tags%> </span></div>
+           <div class="tags"><span>
+             <% tags(j.tags).each do |n|%>
+               <%= link_to n, searchtn_path(n)%>
+             <%end%>
+           </span></div>
        </div>
     </div>
     <%end%>

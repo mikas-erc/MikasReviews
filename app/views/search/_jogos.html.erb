@@ -1,4 +1,4 @@
-<h1>Jogos</h1>
+
 
 <%if @jogos.blank? %>
   <div class="col-md-12" style="margin-bottom:40px;margin-top:10px">
@@ -27,7 +27,12 @@
               <%end%>
                - <%=j.data_de_lancamento%></span></div>
          <div class="descricao" style="margin-top:20px;"><span> <%=j.descricao%> </span></div><br>
-         <div class="preco" style="color:green; font-size:20px;"><span> <%=j.preco%>€ </span></div>
+         <div class="preco" ><span style="color:green; font-size:20px;"> <%=j.preco%>€ </span></div>
+         <div class="tags"><span>
+         <% tags(j.tags).each do |n|%>
+           <%= link_to n, searchtj_path(n)%>
+         <%end%>
+       </span></div><br>
      </div>
   </div>
   <%end%>

@@ -14,7 +14,8 @@
 
   post '/upvote/:id', to: 'classificao#upvote', as: 'upvote'
   post '/downvote/:id', to: 'classificao#downvote', as: 'downvote'
-
+  get '/searchtipon/:id', to: 'search#searchtipon', as: 'searchtn'
+  get '/searchtipoj/:id', to: 'search#searchtipoj', as: 'searchtj'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

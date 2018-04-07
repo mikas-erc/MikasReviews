@@ -54,7 +54,12 @@
               <div class="col-md-9" style="margin:0px">
                 <span style="font-size:15px;"><%= n.nome %></span>
                 <span class="text-muted"><%=n.data_de_lancamento%></span><br>
-                <span class="preco" style="color:green"><%=n.preco%></span>
+                <span class="preco" style="color:green"><%=n.preco%>€</span><br>
+                <span>
+                  <% tags(n.tags).each do |j|%>
+                     <%= link_to j, searchtj_path(j)%>
+                  <%end%>
+                </span>
 
               </div>
           </div>
@@ -88,14 +93,6 @@
           </div>
         </div>
         <br>
-        <div class="col-md-12 main">
-          <br>
-          Tendencias
-          <br>
-          <br>
-          <br>
-          <br>
-        </div>
         <br>
       </div>
       <div class="col-md-12">

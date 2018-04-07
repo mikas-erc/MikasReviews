@@ -1,0 +1,24 @@
+<% @reviews.each do |n| %>
+  <div class="col-md-12" style="margin-bottom:10px;">
+    <%=link_to n.conta.nome ,view_conta_path(n.conta)%>
+    <span class="text-muted"><%=n.classificacao%>/10</span><br>
+    <%=n.texto%>
+  </div>
+<%end%>
+
+  <div class="col-md-12">
+    <center><div id="collection_paginator">
+      <%= will_paginate @reviews%>
+    </div></center>
+  </div>
+
+
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#collection_paginator a').each( function() {
+        $(this).attr( 'data-remote', 'true' )
+        $(this).attr( 'data-replace', '#collection_index' )
+      })
+    })
+  </script>

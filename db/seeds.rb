@@ -61,6 +61,18 @@ Conta.create!(nome:"teste3",
                 foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
 end
 
+20.times do |n|
+  Conta.create!(nome:Faker::RickAndMorty.character,
+                nickname:"TesteSeedR#{n+1}" ,
+                email:"exemplo-conta-r#{n+1}@seed.org",
+                password:"teste1",
+                password_confirmation:"teste1",
+                tipo:"reviewer",
+                ativo:true,
+                ativado_em: Time.zone.now,
+                foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+end
+
 50.times do |n|
   Conta.create!(nome:Faker::RickAndMorty.character,
                 nickname:"TesteSeedE#{n+1}" ,
@@ -81,6 +93,7 @@ end
                 idsteam: n+1,
                 steam:true,
                 data_de_lancamento:Time.zone.tomorrow,
+                tags:'teste1,teste2,teste3',
                 foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
 end
 
@@ -93,4 +106,20 @@ end
                 conta_id:admin.id,
                 ativo:true,
                 foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+end
+
+Conta.all.each do |n|
+  Jogo.all.each do |j|
+    if rand(1..3) == 1
+      Classificacao.new(classificacao:-1,jogo_id:j.id,conta_id:n.id).save
+    else
+      Classificacao.new(classificacao:1,jogo_id:j.id,conta_id:n.id).save
+    end
+  end
+end
+
+Conta.where(tipo:"reviewer").each do |n|
+  Jogo.all.each do |j|
+    Review.new(texto:Faker::Lorem.sentence(20),classificacao:rand(0...11),conta_id:n.id,jogo_id:j.id).save
+  end
 end

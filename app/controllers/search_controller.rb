@@ -10,4 +10,14 @@ class SearchController < ApplicationController
        end
   end
 
+  def searchtipon
+    @id = params[:id]
+    @noticias = Noticium.searchtipo(@id).paginate(page: params[:noticias_page], per_page: 6)
+  end
+
+  def searchtipoj
+    @id = params[:id]
+    @jogos = Jogo.searchtipo(@id).paginate(page: params[:jogos_page], per_page: 6)
+  end
+
 end

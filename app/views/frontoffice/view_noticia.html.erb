@@ -12,17 +12,39 @@
       <%= @noticia.texto %><br>
     </div>
     <div class="col-md-12" style="margin-top:30px; width:100%;">
-      <span class="text-muted"><%= @noticia.tags %></span>
+      <span class="text-muted">
+        <% @ntags.each do |n| %>
+          <%= link_to n, searchtn_path(n)%>
+        <%end%>
+      </span>
     </div>
    </div>
   <div class="col-md-4" style="margin-bottom:250px;">
     <div class="col-md-12 main">
 
-      Noticias do mesmo "tipo"
-    </div>
-    <br>
+      <center><h2>Noticias do mesmo tipo</h2></center>
 
-</div>
+    <br>
+    <% @noticiasmesmotipo.each do |j| %>
+      <%= link_to view_noticia_path(j), class:"semlink" do %>
+    <div class="col-md-10">
+       <div class="col-md-6" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
+        <center> <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %> </center>
+       </div>
+       <div class="col-md-6" style="padding:0px;margin-top:15px">
+           <div class="titulo" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
+           <span class="text-muted"><%=j.data%></span></div>
+           <div class="tags" style="margin-top:30px"><span>
+              <% tags(j.tags).each do |n|%>
+                <%= link_to n, searchtn_path(n)%>
+              <%end%>
+           </span></div><br>
+       </div>
+    </div>
+    <%end%>
+    <%end%>
+    </div>
+  </div>
 </div>
 <br>
 <br>

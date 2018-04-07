@@ -9,4 +9,11 @@ class Noticium < ApplicationRecord
     where("LOWER(nome) LIKE ? ", "%#{search}%")
   end
 
+  def self.searchtipo(search)
+    search=search.downcase.gsub(/\s+/, "%")
+    where("LOWER(tags) LIKE ? ", "%#{search}%")
+  end
+
+
+
 end

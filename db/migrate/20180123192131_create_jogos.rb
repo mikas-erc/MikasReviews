@@ -9,6 +9,7 @@ class CreateJogos < ActiveRecord::Migration[5.1]
       t.boolean :steam
       t.date :data_de_lancamento
       t.string :foto
+      t.string :tags
 
       t.timestamps
     end

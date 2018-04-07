@@ -53,7 +53,7 @@
         Reviews do jogo "<%=@jogo.nome%>"
         <% if Review.where(jogo_id:@jogo.id).any? %>
          - Media de
-          <%@c = Review.where(jogo_id:@jogo.id).average(:classificacao)%>
+          <%@c = Review.where(jogo_id:@jogo.id).average(:classificacao).round(2)%>
           <%if @c > 4%>
             <%if @c >7%>
               <span style="color:green;"><%=@c%></span>
@@ -68,24 +68,48 @@
       </span><br><br>
 
       <!-- <div style="margin-top:20px;"><span>Review escolhida pela MikasReviews:</span></div> -->
-      <% Review.where(jogo_id:@jogo.id).each do |n| %>
-        <div class="col-md-12" style="margin-bottom:10px;">
-          <%=link_to n.conta.nome ,view_conta_path(n.conta)%>
-          <span class="text-muted"><%=n.classificacao%>/10</span><br>
-          <%=n.texto%>
-        </div>
-      <%end%>
+      <div class = "sort_paginate_ajax"> <%= render 'review' %> </div>
 
     </div>
 
     <div class="col-md-12" style="margin-top:30px; width:100%;">
-      <span class="text-muted"><%= @jogo.preco %></span>
+      <span class="text-muted">
+        <% tags(@jogo.tags).each do |n|%>
+          <%= link_to n, searchtj_path(n)%>
+        <%end%></span>
     </div>
    </div>
   <div class="col-md-4 main" style="margin-bottom:250px;">
     <div class="col-md-12">
 
-     Jogos do mesmo genero
+     <center><h2>Jogos do mesmo genero</h2></center>
+     <%@jogosmesmotipo.each do |j|%>
+     <% @dev = nil %>
+     <% @dev = Conta.find_by(nickname:j.developer) %>
+     <%= link_to view_jogo_path(j), class:"semlink" do %>
+       <div class="col-md-10">
+          <div class="col-md-6" style="padding-left:0px; margin-top:10px; margin-bottom:10px;">
+           <center> <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %> </center>
+          </div>
+          <div class="col-md-6" style="padding:0px;">
+              <div class="titulo" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
+              <span class="text-muted">
+                 <%if !@dev.nil? %>
+                    <%=link_to @dev.nome, view_conta_path(@dev) %>
+                  <%else%>
+                    <%= j.developer %>
+                   <%end%>
+                    - <%=j.data_de_lancamento%></span></div>
+                 <div class="preco" ><span style="color:green; font-size:20px;"> <%=j.preco%>€ </span></div>
+                 <div class="tags"><span>
+                   <% tags(j.tags).each do |n|%>
+                      <%= link_to n, searchtj_path(n)%>
+                  <%end%></span></div>
+
+          </div>
+       </div>
+       <%end%>
+       <%end%>
     </div>
     <br>
 

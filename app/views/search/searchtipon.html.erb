@@ -1,0 +1,15 @@
+<div class="row">
+<%if params[:id].blank?%>
+  <div class="col-md-12 main" style="margin-top:50px;margin-bottom:50px;">
+    <center><span style="font-size:30px;">Tente procurar algo!</span></center>
+  </div>
+<%else%>
+  <div class="col-md-12 main">
+    <h1>Noticias do tipo <%=params[:id]%></h1>
+    <div class = "sort_paginate_ajax_noticias"><%= render 'noticias' %></div>
+  </div>
+  <div class="col-md-12">
+    <br>
+  </div>
+<%end%>
+</div>

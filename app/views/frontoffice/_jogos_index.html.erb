@@ -8,7 +8,7 @@
       <center> <%= image_tag j.foto, style:"max-width:250px;max-height:120px;" %> </center>
      </div>
      <div class="col-md-8" style="padding:0px;">
-         <div class="titulo" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
+         <div class="titulo col-md-7" style="margin-bottom:10px;"><span style="font-size:20px;"><%=j.nome%></span><br>
          <span class="text-muted">
             <%if !@dev.nil? %>
                <%=link_to @dev.nome, view_conta_path(@dev) %>
@@ -16,8 +16,34 @@
                <%= j.developer %>
               <%end%>
                - <%=j.data_de_lancamento%></span></div>
-         <div class="descricao" style="margin-top:20px;"><span> <%=j.descricao%> </span></div><br>
-         <div class="preco" style="color:green; font-size:20px;"><span> <%=j.preco%>€ </span></div>
+               <div class="col-md-5">
+                 <div>
+                   <% if Review.where(jogo_id:j.id).any? %>
+                    Classificação:
+                     <%@c = Review.where(jogo_id:j.id).average(:classificacao).round(2)%>
+                     <%if @c > 4%>
+                       <%if @c >7%>
+                         <span style="color:green;"><%=@c%></span>
+                       <%else%>
+                         <span style="color:#b0b012;"><%=@c%></span>
+                       <%end%>
+                     <%else%>
+                       <span style="color:red;"><%=@c%></span>
+                     <%end%>
+                         /10
+                   <%end%>
+                   Pontuação da comunidade: <%=classtotal(j)%>
+                </div>
+               </div>
+          <div class="col-md-12">
+            <div class="descricao" style="margin-top:20px;"><span> <%=j.descricao%> </span></div><br>
+            <div class="preco" ><span style="color:green; font-size:20px;"> <%=j.preco%>€ </span></div>
+            <div class="tags"><span>
+            <% tags(j.tags).each do |n|%>
+              <%= link_to n, searchtj_path(n)%>
+            <%end%>
+          </span></div>
+          </div>
      </div>
   </div>
     <%end%>
