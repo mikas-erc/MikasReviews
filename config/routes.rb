@@ -44,6 +44,8 @@
     resources :noticia
     resources :conta
     resources :review
+    get '/jogo/new/', to: 'jogo#news', as: 'news'
+    post '/jogo/newsteam', to: 'jogo#steam', as: 'steam'
     get '/newsletter', to: 'backoffice#newsletter', as: 'newsletter'
     post '/createaccount', to: 'review#new'
     get '/aprovar', to: 'noticia#aprovarindex', as: 'aprovarindex'

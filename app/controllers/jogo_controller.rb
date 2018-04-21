@@ -12,6 +12,8 @@ class JogoController < ApplicationController
 
   def create
   @jogo = Jogo.new(jogo_params)
+  @jogo.steam=0
+  @jogo.idsteam=0
     if @jogo.save
       flash[:info] = "Jogo adicionado com sucesso!"
       redirect_to jogo_index_path
@@ -47,6 +49,16 @@ class JogoController < ApplicationController
 
   def new
     @jogo= Jogo.new
+  end
+
+  def steam
+    @jogo = Jogo.new
+  end
+
+  def news
+    @jogo = Jogo.new(jogo_params)
+    @steam = JSON.load(open("http://store.steampowered.com/api/appdetails?appids=#{@jogo.steamid}"))
+    @jogo.preco = @steam.price_overview.initial
   end
 
   def jogo_params
