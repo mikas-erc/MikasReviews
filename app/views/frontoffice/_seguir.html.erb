@@ -1,0 +1,9 @@
+<% if !current_conta.nil?%>
+  <% if !(current_conta==@conta) %>
+    <% if segue?(@conta) %>
+      <%=button_to "Deixar de seguir", unfollow_path(@conta.id), class:"btn btn-danger", style:"margin-left:15px;margin-top:10px", method: :post, remote: true, id:'follow'%>
+    <%else%>
+      <%=button_to "Seguir", follow_path(@conta.id), class:"btn btn-success", style:"margin-left:15px;margin-top:10px", method: :post, remote: true, id:'follow'%>
+    <%end%>
+  <%end%>
+<%end%>

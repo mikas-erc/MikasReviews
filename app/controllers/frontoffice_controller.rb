@@ -38,6 +38,8 @@ class FrontofficeController < ApplicationController
 
   def view_conta
     @conta = Conta.find(params[:id])
+    @seguidores = Seguido.where(idseguido:@conta.id).shuffle.last(30)
+    @seguidos = Seguido.where(idseguidor:@conta.id).shuffle.last(30)
   end
 
   def jogos_index

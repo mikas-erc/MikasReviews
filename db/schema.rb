@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20180423161726) do
   end
 
   create_table "seguidos", force: :cascade do |t|
+    t.integer "idseguidor"
+    t.integer "idseguido"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -15,7 +15,7 @@
   post '/upvote/:id', to: 'classificao#upvote', as: 'upvote'
   post '/downvote/:id', to: 'classificao#downvote', as: 'downvote'
   post '/follow/:id', to: 'seguidos#add', as: 'follow'
-  post '/unfollow/:id', to: 'seguidos#remove', as: 'follow'
+  post '/unfollow/:id', to: 'seguidos#delete', as: 'unfollow'
   get '/searchtipon/:id', to: 'search#searchtipon', as: 'searchtn'
   get '/searchtipoj/:id', to: 'search#searchtipoj', as: 'searchtj'
   get    '/login',   to: 'sessions#new'

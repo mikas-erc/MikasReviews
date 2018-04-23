@@ -8,7 +8,8 @@
        <% if @conta.verificado? %><%=image_tag "verificado.png", style:"margin-bottom:15px"%><%end%>
        <span class="text-muted"> <%= @conta.nome%> </span><br>
        <span class="text-info" style="margin-left:5px"> <%= @conta.tipo %></span><br>
-       
+        <div class = "class_ajax"><%= render 'seguir' %></div>
+
     </div>
     <div class="col-md-12" style="margin-bottom:30px">
 
@@ -36,7 +37,29 @@
         <%end%>
       <%end%>
       <% if @conta.tipo!="empresa"%>
-        <h1>reviews favoritas + analisadores favoritos ou jogos publicados</h1>
+        <div class="col-md-6">
+          <h1>Seguidores</h1>
+          <%@seguidores.each do |n|%>
+          <% conta = Conta.find(n.idseguidor)%>
+            <% if conta.verificado %>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome + ' ✓'} %>
+            <%else%>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome} %>
+            <%end%>
+          <%end%>
+        </div>
+
+        <div class="col-md-6">
+          <h1>Seguidos</h1>
+          <%@seguidos.each do |n|%>
+          <% conta = Conta.find(n.idseguido)%>
+            <% if conta.verificado %>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:5px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome + ' ✓'} %>
+            <%else%>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:5px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome} %>
+            <%end%>
+          <%end%>
+        </div>
       <%end%>
     </div>
     <div class="col-md-12" style="margin-bottom:50px">
@@ -48,3 +71,8 @@
 <br>
 <br>
 <br>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
