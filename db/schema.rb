@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405173744) do
+ActiveRecord::Schema.define(version: 20180423161726) do
 
   create_table "classificacaos", force: :cascade do |t|
     t.integer "classificacao"
@@ -85,6 +85,11 @@ ActiveRecord::Schema.define(version: 20180405173744) do
     t.index ["conta_id", "created_at"], name: "index_reviews_on_conta_id_and_created_at"
     t.index ["conta_id"], name: "index_reviews_on_conta_id"
     t.index ["jogo_id"], name: "index_reviews_on_jogo_id"
+  end
+
+  create_table "seguidos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "steams", force: :cascade do |t|

@@ -1,8 +1,14 @@
 <h1>Adicionar Jogo</h1>
 
+
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3 main">
-    <center><%= button_to 'Steam', steam_path, class: "btn btn-primary"%></center><br>
+  <ul class="nav nav-tabs">
+    <li id="manual" class="active"><a href="#" class="tab">Manual</a></li>
+    <li id="steam"><a href="#" class="tab">Steam</a></li>
+  </ul>
+  <div id="form">
     <%= form_for(@jogo, url: {action: "create"}) do |f| %>
       <%= f.label :nome %>
       <%= f.text_field :nome, class: 'form-control' %>
@@ -30,5 +36,30 @@
 
       <br><%= f.submit "Adicionar jogo", class: "btn btn-primary" %>
     <% end %>
+    </div>
   </div>
 </div>
+
+<script>
+
+$(document).ready( function() {
+  $('#manual').on("click", function() {
+    if ( $('#manual').hasClass("active") == false) {
+        $('#form').show();
+        $('#manual').addClass("active");
+        $('#manual').addClass("active");
+      }
+  })
+  $('#steam').click(function(){
+  if ( $('steam').hasClass("active") == false) {
+    $('#form').hide();
+    $('#manual').removeClass("active");
+    $('#steam').addClass("active");
+     return false;} });
+  // $('button#steam').click function() {
+  //   $('#form').hide();
+  // })
+})
+
+
+</script>

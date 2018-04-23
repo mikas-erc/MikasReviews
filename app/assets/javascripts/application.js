@@ -15,7 +15,4 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
-$(document).on 'ajax:success', 'a.vote', (status,data,xhr)->
-  $(".votes-count[data-id=#{data.id}]").text data.count
-  return
+//= require_tree .  
