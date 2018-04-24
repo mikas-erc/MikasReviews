@@ -1,6 +1,10 @@
 <div style="margin-left:15%" id="collection_index">
   <% @contas.each do |j| %>
-
+  <%if current_page?(action: 'follows') %>
+    <% j = Conta.find(j.idseguido) %>
+  <%else%>
+    <% j = Conta.find(j.idseguidor) %>
+  <%end%>
   <% @j = j %>
     <%= link_to view_conta_path(@j), class:"semlink" do %>
     <div class="col-md-3 main">

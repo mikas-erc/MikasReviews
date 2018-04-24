@@ -10,6 +10,7 @@ class CreateJogos < ActiveRecord::Migration[5.1]
       t.date :data_de_lancamento
       t.string :foto
       t.string :tags
+      t.integer :favreview, default:0
 
       t.timestamps
     end

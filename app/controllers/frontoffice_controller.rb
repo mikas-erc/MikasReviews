@@ -38,6 +38,8 @@ class FrontofficeController < ApplicationController
 
   def view_conta
     @conta = Conta.find(params[:id])
+    @tseguidores=Seguido.where(idseguido:@conta.id)
+    @tseguidos=Seguido.where(idseguidor:@conta.id)
     @seguidores = Seguido.where(idseguido:@conta.id).shuffle.last(28)
     @seguidos = Seguido.where(idseguidor:@conta.id).shuffle.last(28)
   end
@@ -48,6 +50,16 @@ class FrontofficeController < ApplicationController
 
   def noticias_index
     @noticias = Noticium.where(ativo:true).paginate(page: params[:page], per_page: 10)
+  end
+
+  def followers
+    @conta = Conta.find(params[:id])
+    @contas=Seguido.where(idseguido:params[:id]).paginate(page: params[:page], per_page: 12)
+  end
+
+  def follows
+    @conta = Conta.find(params[:id])
+    @contas=Seguido.where(idseguidor:params[:id]).paginate(page: params[:page], per_page: 12)
   end
 
   def contas_index

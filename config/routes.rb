@@ -23,6 +23,8 @@
   delete '/logout',  to: 'sessions#destroy'
 
 
+  get '/conta/followers/:id', to: 'frontoffice#followers', as: 'followers'
+  get '/conta/follows/:id', to: 'frontoffice#follows', as: 'follows'
   get '/noticia/:id', to: 'frontoffice#view_noticia', as:  'view_noticia'
   get '/jogo/:id', to: 'frontoffice#view_jogo', as:  'view_jogo'
   get '/conta/:id', to: 'frontoffice#view_conta', as: 'view_conta'
