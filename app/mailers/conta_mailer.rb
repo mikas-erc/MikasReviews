@@ -16,6 +16,13 @@ class ContaMailer < ApplicationMailer
     mail to: conta.email, subject: "Newsletter da MikasReviews"
   end
 
+  def notificacao(conta, empresa)
+    @conta = conta
+    mail to: conta.email, subject: ""
+  end
+
+  end
+
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #

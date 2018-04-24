@@ -123,3 +123,12 @@ Conta.where(tipo:"reviewer").each do |n|
     Review.new(texto:Faker::Lorem.sentence(20),classificacao:rand(0...11),conta_id:n.id,jogo_id:j.id).save
   end
 end
+Conta.all.each do |n|
+  Conta.all.each do |j|
+    if !(j==n)
+      if rand(1..2) == 1
+        Seguido.new(idseguidor:n.id,idseguido:j.id).save
+      end
+    end
+  end
+end

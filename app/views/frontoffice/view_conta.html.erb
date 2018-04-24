@@ -38,23 +38,23 @@
       <%end%>
       <% if @conta.tipo!="empresa"%>
         <div class="col-md-6">
-          <h1>Seguidores</h1>
+          <h1>Seguidores - <%= @seguidores.count %></h1>
           <%@seguidores.each do |n|%>
           <% conta = Conta.find(n.idseguidor)%>
             <% if conta.verificado %>
-              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome + ' ✓'} %>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:4px;border:solid;border-width:1px;border-color:#75CAEB;"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome + ' ✓'} %>
             <%else%>
-              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome} %>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:5px;"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome} %>
             <%end%>
           <%end%>
         </div>
 
         <div class="col-md-6">
-          <h1>Seguidos</h1>
+          <h1>Seguidos - <%= @seguidos.count %></h1>
           <%@seguidos.each do |n|%>
           <% conta = Conta.find(n.idseguido)%>
             <% if conta.verificado %>
-              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:5px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome + ' ✓'} %>
+              <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:4px;border:solid;border-width:1px;border-color:#75CAEB;"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome + ' ✓'} %>
             <%else%>
               <%= link_to image_tag(conta.foto, style:"height:30px;width:30px;margin-bottom:5px"), view_conta_path(conta), {'data-toggle'=> "tooltip" ,'title'=> conta.nome} %>
             <%end%>
