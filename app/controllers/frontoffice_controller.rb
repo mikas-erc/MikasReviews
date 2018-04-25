@@ -22,7 +22,7 @@ class FrontofficeController < ApplicationController
     @ntags = @noticia.tags.split(',')
     @ntags.each do |n|
       if @noticiasmesmotipo.nil?
-        @noticiasmesmotipo = Noticium.searchtipo(n).where.not(id:@noticia.id).shuffle.last(3)
+        @noticiasmesmotipo = Noticium.searchtipo(n).where.not(id:@noticia.id).shuffle.last(7)
       end
     end
   end

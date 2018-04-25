@@ -22,7 +22,7 @@
     <div class="col-md-12" style="border:10px;background-color: #158CBA;width: 90%;height: 12px;border-color: #158CBA;border-radius: 100px;margin-bottom: 20px;margin-top: 20px;align-self: center;margin-left: 6%;">
 
     </div>
-
+<%if !current_conta.nil? %>
     <div class="col-md-12" style="position: relative;">
       <%= form_for(@comentario, url: {controller: "comentarios", action: "addnoticia"}, :remote => true) do |f| %>
         <%= f.hidden_field :tipoid, :value => @noticia.id %>
@@ -31,7 +31,7 @@
         <%= f.submit "Comentar", class: "btn btn-primary", style:'position: absolute;right: 10px;top: 100%;' %>
       <% end %>
     </div>
-
+<%end%>
 
     <div class="col-md-12" style="margin-top:30px">
 

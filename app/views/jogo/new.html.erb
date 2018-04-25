@@ -8,43 +8,37 @@
     <li id="manual" class="active"><a href="#" class="tab">Manual</a></li>
     <li id="steam"><a href="#" class="tab">Steam</a></li>
   </ul>
-  <div id="form">
-    <%= form_for(@jogo, url: {action: "create"}) do |f| %>
-      <%= f.label :nome %>
-      <%= f.text_field :nome, class: 'form-control' %>
 
-      <%= f.label :preco %>
-      <%= f.number_field :preco, class: 'form-control', step: '0.01' %>
-
-      <%= f.label :descricao %>
-      <%= f.text_area :descricao, class: 'form-control' %>
-
-      <%= f.label :developer %>
-      <%= f.text_field :developer, class: 'form-control' %>
-
-      <%= f.label :tags %>
-      <%= f.text_field :tags, class: 'form-control' , style:"margin-bottom:0px;"%>
-
-      <%= f.label :data_de_lancamento %>
-      <%= f.date_field :data_de_lancamento, class: 'form-control',style:"margin-bottom:20px;" %>
-
-      <div class="col-md-6">
-        <%= f.label :foto %>
-        <%= f.file_field :foto %>
-      </div>
-
-
-      <br><%= f.submit "Adicionar jogo", class: "btn btn-primary" %>
+  <div id="formsteam" style="padding-top:20px;padding-bottom:50px">
+    <%= form_tag("#", method: "post", id:'steamlink', remote: true) do %>
+      <%= label_tag(:q, "ID da Steam:") %>
+      <%= number_field_tag(:steamnumber) %>
+      <%= submit_tag("Buscar dados a steam", class:'btn btn-primary') %>
     <% end %>
-    </div>
+  </div>
+
+  <div id="form">
+    <%=render 'form'%>
+  </div>
+
+
+
+
   </div>
 </div>
 
 <script>
 
 $(document).ready( function() {
+  $('#steamlink').submit(function(){
+    var numero = $('#steamnumber').val();
+    $(this).attr('action', "/backoffice/jogo/newsteam/" + numero);
+  });
+
+  $('#formsteam').hide();
   $('#manual').on("click", function() {
     if ( $('#manual').hasClass("active") == false) {
+        $('#formsteam').hide();
         $('#form').show();
         $('#manual').addClass("active");
         $('#manual').addClass("active");
@@ -52,6 +46,7 @@ $(document).ready( function() {
   })
   $('#steam').click(function(){
   if ( $('steam').hasClass("active") == false) {
+    $('#formsteam').show();
     $('#form').hide();
     $('#manual').removeClass("active");
     $('#steam').addClass("active");

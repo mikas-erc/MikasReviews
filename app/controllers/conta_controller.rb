@@ -81,13 +81,13 @@ class ContaController < ApplicationController
     if conta_params[:tipo] != "backoffice"
       if (conta_params[:tipo] != "admin") && (admin.include?(current_conta.tipo))
         if @conta.update_attributes(conta_params)
-          redirect_to conta_path
+          redirect_to @conta
         else
           render 'edit'
         end
       elsif (@conta == current_conta) || (current_conta.tipo=="backoffice")
         if @conta.update_attributes(conta_params)
-          redirect_to conta_path
+          redirect_to @conta
         else
           render 'edit'
         end

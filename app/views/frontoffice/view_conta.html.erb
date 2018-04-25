@@ -68,6 +68,7 @@
 
     </div>
 
+<%if !current_conta.nil? %>
     <div class="col-md-12" style="position: relative;">
       <%= form_for(@comentario, url: {controller: "comentarios", action: "addconta"}, :remote => true, method: :post) do |f| %>
         <%= f.hidden_field :tipoid, :value => @conta.id %>
@@ -76,6 +77,7 @@
         <%= f.submit "Comentar", class: "btn btn-primary", style:'position: absolute;right: 10px;top: 100%;' %>
       <% end %>
     </div>
+<%end%>
 
 
     <div class="col-md-12" style="margin-top:30px">

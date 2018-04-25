@@ -73,7 +73,7 @@ end
                 foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
 end
 
-50.times do |n|
+20.times do |n|
   Conta.create!(nome:Faker::RickAndMorty.character,
                 nickname:"TesteSeedE#{n+1}" ,
                 email:"exemplo-empresa-#{n+1}@seed.org",
@@ -85,18 +85,19 @@ end
                 verificado:true,
                 foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
 end
-30.times do |n|
-  Jogo.create!(nome:Faker::Fallout.character + "#{n+1}",
-                preco: n+1.99,
-                descricao:Faker::Lorem.sentence,
-                developer:"TesteSeedE#{n+1}",
-                idsteam: n+1,
-                steam:true,
-                data_de_lancamento:Time.zone.tomorrow,
-                tags:'teste1,teste2,teste3',
-                foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+Conta.where(tipo:"empresa").each do |j|
+  3.times do |n|
+    Jogo.create!(nome:Faker::Fallout.character + "#{n+1}",
+                  preco: n+1.99,
+                  descricao:Faker::Lorem.sentence,
+                  developer:j.nickname,
+                  idsteam: 0,
+                  steam:false,
+                  data_de_lancamento:Time.zone.tomorrow,
+                  tags:'teste1,teste2,teste3',
+                  foto:  File.open(File.join(Rails.root, "/app/assets/images/seed/120x120.png")))
+  end
 end
-
 30.times do |n|
   Noticium.create!(nome:Faker::ProgrammingLanguage.name + "#{n+1}",
                 texto:Faker::Lorem.sentence(50),
@@ -129,6 +130,28 @@ Conta.all.each do |n|
       if rand(1..2) == 1
         Seguido.new(idseguidor:n.id,idseguido:j.id).save
       end
+    end
+  end
+end
+
+Conta.all.each do |n|
+  Conta.all.each do |j|
+    if rand(1..2) == 1
+      Comentario.new(tipo:'conta',tipoid:j.id,texto:Faker::Lorem.sentence(20),conta_id:n.id).save
+    end
+  end
+end
+Conta.all.each do |n|
+  Jogo.all.each do |j|
+    if rand(1..2) == 1
+      Comentario.new(tipo:'jogo',tipoid:j.id,texto:Faker::Lorem.sentence(20),conta_id:n.id).save
+    end
+  end
+end
+Conta.all.each do |n|
+  Noticium.all.each do |j|
+    if rand(1..2) == 1
+      Comentario.new(tipo:'noticia',tipoid:j.id,texto:Faker::Lorem.sentence(20),conta_id:n.id).save
     end
   end
 end

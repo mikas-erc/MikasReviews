@@ -15,8 +15,9 @@
 
       <%= f.label :tipo %>
       <% tipos = [["backoffice","backoffice"],["admin","admin"],["reviewer","reviewer"],["empresa","empresa"],["user","user"]] %>
-      <%= f.select :tipo, options_for_select(tipos), class: 'form-control' %><br>
+      <% ttipos = ["backoffice","admin","reviewer","empresa","user"] %>
 
+      <%= f.select :tipo, options_for_select(ttipos, selected: @conta.tipo),class: 'form-control' %><br>
 
       <div class="col-md-6">
         <%= f.label :foto %>
