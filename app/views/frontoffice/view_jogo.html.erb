@@ -79,7 +79,8 @@
               <div class="col-md-8">
                 <%=link_to j.conta.nome ,view_conta_path(j.conta)%>
                 <span class="text-muted"><%=j.classificacao%>/10</span><br>
-                <%=j.texto%>
+                <%=j.texto%><br>
+                <span class="text-muted"><%=j.created_at.strftime("%d-%m-%Y")%></span><br>
               </div>
             </div>
         </div>

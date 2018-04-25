@@ -32,7 +32,7 @@ class FrontofficeController < ApplicationController
     @comentario = Comentario.new()
     @comentarios = Comentario.where(tipo:'jogo',tipoid:@jogo.id).paginate(page: params[:comentarios_page], per_page: 15).reverse_order
     @jtags = @jogo.tags.split(',')
-    @reviews = Review.where(jogo_id:@jogo.id).paginate(page: params[:page], per_page: 7)
+    @reviews = Review.where(jogo_id:@jogo.id).paginate(page: params[:page], per_page: 7).reverse_order
     @jtags.each do |n|
      if @jogosmesmotipo.nil?
        @jogosmesmotipo = Jogo.searchtipo(n).where.not(id:@jogo.id).shuffle.last(7)

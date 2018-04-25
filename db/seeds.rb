@@ -155,3 +155,6 @@ Conta.all.each do |n|
     end
   end
 end
+Jogo.all.each do |n|
+  n.update_attribute(:favreview, Review.where(jogo_id:n.id).first.id) 
+end
