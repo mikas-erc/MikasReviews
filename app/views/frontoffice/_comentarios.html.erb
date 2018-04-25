@@ -1,0 +1,41 @@
+<%admin= ["admin","backoffice"]%>
+
+<span style="size-font:10px" class="muted">Comentarios:</span><br>
+<% @comentarios.each do |n| %>
+    <%j = Conta.find(n.conta_id)%>
+    <div class="col-md-12" style="margin-bottom:10px;border-color: #158CBA1A;border-style: solid;border-radius: 10px;padding-top:4px;padding-bottom:4px">
+      <div class="col-md-2">
+        <%=image_tag j.foto , style:'width:60px;height:60px' %>
+      </div>
+      <div class="col-md-10">
+        <%=link_to j.nome ,view_conta_path(j)%>
+        <%=n.texto%><br>
+        <span class="text-muted"><%=n.created_at.strftime("%d-%m-%Y")%></span><br>
+        <span>
+          <% if !current_conta.nil? %>
+            <%if current_conta==j %>
+              <%=link_to "Remover Comentario", uncomment_path(n.id), remote:true, method: :post%>
+            <%elsif (admin.include?(current_conta.tipo))%>
+              <%=link_to "Remover Comentario", uncomment_path(n.id), remote:true, method: :post%>
+            <%end%>
+
+          <%end%>
+        </span>
+      </div>
+    </div>
+  <%end%>
+
+  <div class="col-md-12">
+    <center><div id="collection_paginator">
+      <%= will_paginate @comentarios,:param_name => 'comentarios_page'%>
+    </div></center>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#collection_paginator a').each( function() {
+        $(this).attr( 'data-remote', 'true' )
+        $(this).attr( 'data-replace', '#collection_index' )
+      })
+    })
+  </script>

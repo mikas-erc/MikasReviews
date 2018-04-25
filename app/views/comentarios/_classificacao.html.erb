@@ -1,0 +1,15 @@
+
+<% if upvoted?(@jogo,current_conta) %>
+  <%=link_to image_tag('upvoted.png', style:"width:20px"), upvote_path(@jogo), method: :post, remote: true, id:'vote'%><br>
+<%else%>
+  <%=link_to image_tag('upvote.png', style:"width:20px"), upvote_path(@jogo), method: :post, remote: true, id:'vote'%><br>
+<%end%>
+
+<center>
+  <%= classtotal(@jogo) %>
+</center>
+<% if downvoted?(@jogo,current_conta) %>
+  <%=link_to image_tag('downvoted.png', style:"width:20px"), downvote_path(@jogo), method: :post, remote: true, id:'vote'%>
+<%else%>
+  <%=link_to image_tag('downvote.png', style:"width:20px"), downvote_path(@jogo), method: :post, remote: true, id:'vote'%>
+<%end%>

@@ -1,5 +1,5 @@
 class FrontofficeController < ApplicationController
-  before_action :conta_logged_in, only: [:edit_conta, :edit_contapw, :update_conta]
+  before_action :conta_logged_in, only: [:edit_conta, :edit_contapw, :update_conta, :favreview]
   before_action :conta_correcta, only: [:edit_conta, :edit_contapw, :update_conta]
 
 
@@ -14,6 +14,8 @@ class FrontofficeController < ApplicationController
 
   def view_noticia
     @noticia = Noticium.find(params[:id])
+    @comentario = Comentario.new()
+    @comentarios = Comentario.where(tipo:'noticia',tipoid:@noticia.id).paginate(page: params[:comentarios_page], per_page: 15).reverse_order
     if !@noticia.ativo?
       redirect_to root_path
     end
@@ -27,17 +29,28 @@ class FrontofficeController < ApplicationController
 
   def view_jogo
     @jogo = Jogo.find(params[:id])
+    @comentario = Comentario.new()
+    @comentarios = Comentario.where(tipo:'jogo',tipoid:@jogo.id).paginate(page: params[:comentarios_page], per_page: 15).reverse_order
     @jtags = @jogo.tags.split(',')
-    @reviews = Review.where(jogo_id:@jogo.id).paginate(page: params[:page], per_page: 10)
+    @reviews = Review.where(jogo_id:@jogo.id).paginate(page: params[:page], per_page: 7)
     @jtags.each do |n|
      if @jogosmesmotipo.nil?
-       @jogosmesmotipo = Jogo.searchtipo(n).where.not(id:@jogo.id).shuffle.last(3)
+       @jogosmesmotipo = Jogo.searchtipo(n).where.not(id:@jogo.id).shuffle.last(7)
      end
    end
   end
 
+  def favreview
+    @class = Classificacao.find(params[:id])
+    @jogo = Jogo.find(@class.jogo_id)
+    @jogo.update_attribute(:favreview, params[:id])
+      redirect_to view_jogo_path(@jogo)
+  end
+
   def view_conta
     @conta = Conta.find(params[:id])
+    @comentario = Comentario.new()
+    @comentarios = Comentario.where(tipo:'conta',tipoid:@conta.id).paginate(page: params[:comentarios_page], per_page: 15).reverse_order
     @tseguidores=Seguido.where(idseguido:@conta.id)
     @tseguidos=Seguido.where(idseguidor:@conta.id)
     @seguidores = Seguido.where(idseguido:@conta.id).shuffle.last(28)

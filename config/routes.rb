@@ -23,6 +23,7 @@
   delete '/logout',  to: 'sessions#destroy'
 
 
+  get '/jogo/fav/:id', to: 'frontoffice#favreview', as: 'favreview'
   get '/conta/followers/:id', to: 'frontoffice#followers', as: 'followers'
   get '/conta/follows/:id', to: 'frontoffice#follows', as: 'follows'
   get '/noticia/:id', to: 'frontoffice#view_noticia', as:  'view_noticia'
@@ -36,6 +37,16 @@
   get '/signup', to: 'frontoffice#new_conta'
   get '/createaccount', to: 'frontoffice#new_conta'
   get '/editarconta/:id', to: 'frontoffice#edit_conta', as: 'fedit_conta'
+
+  post '/conta/comment/:id', to: 'comentarios#addconta', as: 'commentconta'
+  post '/noticia/comment/:id', to: 'comentarios#addnoticia', as: 'commentnoticia'
+  post '/jogo/comment/:id', to: 'comentarios#addjogo', as: 'commentjogo'
+  post '/conta/uncomment/:id', to: 'comentarios#deleteconta', as: 'uncommentconta'
+  post '/noticia/uncomment/:id', to: 'comentarios#deletenoticia', as: 'uncommentnoticia'
+  post '/jogo/uncomment/:id', to: 'comentarios#deletejogo', as: 'uncommentjogo'
+
+  post '/uncomment/:id', to: 'comentarios#destroy', as: 'uncomment'
+
   patch '/update/:id', to: 'frontoffice#update_conta'
   post '/createaccount', to: 'frontoffice#create_conta'
   root 'frontoffice#index'

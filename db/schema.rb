@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180423161726) do
+ActiveRecord::Schema.define(version: 20180425105547) do
 
   create_table "classificacaos", force: :cascade do |t|
     t.integer "classificacao"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20180423161726) do
     t.datetime "updated_at", null: false
     t.index ["conta_id", "created_at"], name: "index_classificacaos_on_conta_id_and_created_at"
     t.index ["conta_id"], name: "index_classificacaos_on_conta_id"
+  end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string "tipo"
+    t.integer "tipoid"
+    t.text "texto"
+    t.integer "conta_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conta_id"], name: "index_comentarios_on_conta_id"
   end
 
   create_table "conta", force: :cascade do |t|
@@ -51,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180423161726) do
     t.date "data_de_lancamento"
     t.string "foto"
     t.string "tags"
+    t.integer "favreview", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

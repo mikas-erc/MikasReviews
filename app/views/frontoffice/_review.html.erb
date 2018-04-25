@@ -1,9 +1,20 @@
+<%admin= ["admin","backoffice"]%>
+<span style="size-font:10px">Outras reviews</span><br>
 <% @reviews.each do |n| %>
-  <div class="col-md-12" style="margin-bottom:10px;">
-    <%=link_to n.conta.nome ,view_conta_path(n.conta)%>
-    <span class="text-muted"><%=n.classificacao%>/10</span><br>
-    <%=n.texto%>
-  </div>
+  <%if n.id != @jogo.favreview%>
+    <div class="col-md-12" style="margin-bottom:10px;border-color: #158CBA;border-style: solid;border-radius: 10px;">
+      <%=link_to n.conta.nome ,view_conta_path(n.conta)%>
+      <span class="text-muted"><%=n.classificacao%>/10</span><br>
+      <%=n.texto%><br>
+      <span>
+        <% if !current_conta.nil? %>
+          <%if (admin.include?(current_conta.tipo))%>
+            <%=link_to "Marcar como melhor review", favreview_path(n)%>
+          <%end%>
+        <%end%>
+      </span>
+    </div>
+  <%end%>
 <%end%>
 
   <div class="col-md-12">

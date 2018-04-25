@@ -25,6 +25,7 @@ gem 'whenever', :require => false
 gem 'rufus-scheduler', '~> 3.4', '>= 3.4.2'
 gem 'webpush'
 gem 'serviceworker-rails'
+gem 'random_images', '~> 0.0.6'
 
 # # Use postgresql as the database for Active Record
 # gem 'pg', '~> 0.18'
